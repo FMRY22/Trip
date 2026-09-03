@@ -303,6 +303,13 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
   html,body{background:#F7F2E9 !important;color:#0C1B24 !important}
   .day,.dbi,.opt,.stay,.bk-card,.item{background:#fff !important;color:#0C1B24 !important}
 }
+
+/* today highlight */
+.day.is-today{position:relative}
+.day.is-today .day-head{box-shadow:inset 3px 0 0 var(--accent,#c96)}
+.tag.tag-today{background:#c9663a;color:#fff;font-weight:700}
+.rail-day.is-today{outline:2px solid #c9663a;outline-offset:1px}
+#todayBtn{position:fixed;left:14px;bottom:14px;z-index:60;border:0;border-radius:999px;padding:10px 16px;background:#c9663a;color:#fff;font-weight:700;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
 </style>
 </head>
 <body>
@@ -381,7 +388,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <h2>الجدول اليومي</h2>
       <p>خط زمني واحد متصل من 27 أغسطس إلى 12 سبتمبر. النقطة الملوّنة على يمين كل سطر تدل على وقت اليوم: صباح · نهار · مساء · ليل. «أول» و«بديل» خياران لنفس الوقت، لا نشاطان.</p>
     </div>
-    <article class="day city-me" id="d27" data-city="me">
+    <article class="day city-me" id="d27" data-city="me" data-date="2026-08-27">
   <header class="day-head">
     <div class="day-date"><span class="dd">27.08</span><span class="dw">الخميس</span></div>
     <h3 class="day-title">الوصول + أول ليلة</h3>
@@ -441,7 +448,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Perla Club</div>
       
       <p class="opt-desc">امتداد بعد الـ02:00 فقط لو الطاقة موجودة · 23:30–04:00 · مشي دقيقتين من Blue Marlin · 4.6 لكن على 109 مراجعات فقط (عيّنة صغيرة)</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Casper+Bar+Budva&amp;query_place_id=ChIJLwRjlJPUTRMRg9nCZKecZFE" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Perla+Restaurant+Club+Budva&amp;query_place_id=ChIJv03tIADVTRMR2lQWB0YII0o" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-morning">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -449,7 +456,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">بدون وقت محدد؛ مشي من المدينة القديمة (~10 دقائق) أو دقيقتان لو كنت في Perla</p>
       </div></li></ol>
   
-</article><article class="day city-me" id="d28" data-city="me">
+</article><article class="day city-me" id="d28" data-city="me" data-date="2026-08-28">
   <header class="day-head">
     <div class="day-date"><span class="dd">28.08</span><span class="dw">الجمعة</span></div>
     <h3 class="day-title">Kamenovo + Charlotte de Witte</h3>
@@ -522,7 +529,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">بدون وقت محدد؛ تاكسي من Bečići إلى Blue Marlin (~10 دقائق)</p>
       </div></li></ol>
   
-</article><article class="day city-me" id="d29" data-city="me">
+</article><article class="day city-me" id="d29" data-city="me" data-date="2026-08-29">
   <header class="day-head">
     <div class="day-date"><span class="dd">29.08</span><span class="dw">السبت</span></div>
     <h3 class="day-title">Ploče + Sea Dance (ليلة السبت)</h3>
@@ -596,7 +603,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">بدون وقت محدد؛ تاكسي من Bečići إلى Blue Marlin (~10 دقائق)</p>
       </div></li></ol>
   
-</article><article class="day city-me" id="d30" data-city="me">
+</article><article class="day city-me" id="d30" data-city="me" data-date="2026-08-30">
   <header class="day-head">
     <div class="day-date"><span class="dd">30.08</span><span class="dw">الأحد</span></div>
     <h3 class="day-title">Boat + Peggy Gou</h3>
@@ -674,7 +681,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">بدون وقت محدد؛ تاكسي من Bečići إلى Blue Marlin (~10 دقائق)</p>
       </div></li></ol>
   
-</article><article class="day city-me" id="d31" data-city="me">
+</article><article class="day city-me" id="d31" data-city="me" data-date="2026-08-31">
   <header class="day-head">
     <div class="day-date"><span class="dd">31.08</span><span class="dw">الاثنين</span></div>
     <h3 class="day-title">Slow Luxury + Local Dinner</h3>
@@ -769,7 +776,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         
       </div></li></ol>
   
-</article><article class="day city-me" id="d1" data-city="me">
+</article><article class="day city-me" id="d1" data-city="me" data-date="2026-09-01">
   <header class="day-head">
     <div class="day-date"><span class="dd">01.09</span><span class="dw">الثلاثاء</span></div>
     <h3 class="day-title">Pržno + Miločer + Sveti Stefan + Farewell</h3>
@@ -878,7 +885,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">TGD 8:10am → BEG 9:00am → MLA 1:45pm. Connection 2h40. Baggage is not checked through per itinerary: request through-check at TGD; if refused, be prepared to reclaim and re-drop at BEG. Operational risk: 🟡 tight but viable; Air Serbia baggage drop closes 45 min before departure</p>
       </div></li></ol>
   
-</article><article class="day city-tr" id="d2" data-city="tr">
+</article><article class="day city-tr" id="d2" data-city="tr" data-date="2026-09-02">
   <header class="day-head">
     <div class="day-date"><span class="dd">02.09</span><span class="dw">الأربعاء</span></div>
     <h3 class="day-title">Arrival + First Night</h3>
@@ -898,7 +905,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">3:00pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🏨 Check-in — Mercury Towers Apartment 2609</h4>
-        <p class="stop-desc">Mercury Towers · St. Julian’s · Airbnb HMTPE5XTSD · ضيف واحد · Check-in 3:00pm، Checkout 11 سبتمبر 11:00am</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Mercury+Tower+St+Julians&amp;query_place_id=ChIJI3DMZ2lFDhMRRsKyz3_zAiM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">Mercury Towers · St. Julian’s · Airbnb HMTPE5XTSD · ضيف واحد · Check-in 3:00pm، Checkout 11 سبتمبر 11:00am</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9231259%2C14.4894831&amp;query_place_id=ChIJI3DMZ2lFDhMRRsKyz3_zAiM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">4:30pm–6:15pm</div>
       <div class="stop-main">
@@ -908,7 +915,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">7:00pm–7:45pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🍸 Aperitivo — Kuch Kuch</h4>
-        <p class="stop-desc">داخل Mercury House — نفس مبناك · يفتح 7:00pm بالضبط · 4.7 على 232 مراجعة</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Kuch+Kuch+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">داخل Mercury House — نفس مبناك · يفتح 7:00pm بالضبط · 4.7 على 232 مراجعة</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9231259%2C14.4894831&amp;query_place_id=ChIJAx57BVdFDhMR8upzDbkRC8Y" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">8:00pm–9:45pm</div>
       <div class="stop-main">
@@ -918,12 +925,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Lumi Restaurant</div>
       
       <p class="opt-desc">🟢 داخل فندق voco، نفس منطقة Mercury Towers — روفتوب (الطابق 4)، موسيقى حية، إطلالة St. George&#x27;s Bay. Mediterranean/California fusion؛ برجر أنجوس، Pulled Beef، ستيك مشوي — تنويع حقيقي عن إيطاليا (رحلتك تنتهي بميلانو)</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Lumi+Malta&amp;query_place_id=ChIJuzTh415FDhMRxn1YKQVwlJ8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9238234%2C14.4874527&amp;query_place_id=ChIJuzTh415FDhMRxn1YKQVwlJ8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Primitivo Grill</div>
       
       <p class="opt-desc">🟢 إيطالي أصيل، تقييمات قوية ومتسقة، خدمة سريعة وودودة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Primitivo+Grill+St+Julians+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9226093%2C14.4909052&amp;query_place_id=ChIJr9KYIVBFDhMRUgEnFRP32mY" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-night">
       <div class="stop-time">10:15pm–10:30pm</div>
       <div class="stop-main">
@@ -933,10 +940,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">11:00pm–4:00am</div>
       <div class="stop-main">
         <h4 class="stop-title">🎧 Glow — Toy Room Malta (Optional)</h4>
-        <p class="stop-desc">Wednesday Glow · يبقى خيارًا اختياريًا فقط في يوم الوصول؛ لا يُعامل كـNightlife Anchor. إذا كان السفر مرهقًا، النوم أفضل</p><p class="why">إذا كان الوصول أو الإرهاق أثقل من المتوقع، نختصر الليلة بدون Backup إلزامي</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Toy+Room+Malta&amp;query_place_id=ChIJZ_9G9W9FDhMRO7f2C1ePmcw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">Wednesday Glow · يبقى خيارًا اختياريًا فقط في يوم الوصول؛ لا يُعامل كـNightlife Anchor. إذا كان السفر مرهقًا، النوم أفضل</p><p class="why">إذا كان الوصول أو الإرهاق أثقل من المتوقع، نختصر الليلة بدون Backup إلزامي</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9242198%2C14.4890574&amp;query_place_id=ChIJZ_9G9W9FDhMRO7f2C1ePmcw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li></ol>
   <div class="day-foot"><p class="daynote">💡 يوم وصول فقط: نريد بداية اجتماعية خفيفة، لا ليلة ثقيلة قبل أول يوم كامل</p></div>
-</article><article class="day city-mt" id="d3" data-city="mt">
+</article><article class="day city-mt" id="d3" data-city="mt" data-date="2026-09-03">
   <header class="day-head">
     <div class="day-date"><span class="dd">03.09</span><span class="dw">الخميس</span></div>
     <h3 class="day-title">Sunset Boat Party</h3>
@@ -958,15 +965,15 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🍳 الفطور</h4>
         <div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">Crust Bistro &amp; Bar</div>
+      <div class="opt-name">Cafe G Malta</div>
       
-      <p class="opt-desc">Triq il-Mensija، سان جِليان — قريب من السكن وفي اتجاه البحر · 4.5 على 1,448 مراجعة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Crust+Bistro+%26+Bar+St+Julians&amp;query_place_id=ChIJZ841GGpFDhMRHn3ZICPAgtg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <p class="opt-desc">8 Church St، سان جِليان · 4.8 على 501 مراجعة · الخميس 8:00am–3:00pm · إحداثيات مؤكدة 35.9232, 14.4919</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9232188%2C14.4918983&amp;query_place_id=ChIJ9QnoNahFDhMRHomE63kx8Wg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">Matcharia</div>
+      <div class="opt-name">The Brunch Club</div>
       
-      <p class="opt-desc">Triq Gort — بجانب Mercury مباشرة · 4.6 على 762 مراجعة · 9:00am–7:00pm (Café Jubilee استُبعد — موقعه في فاليتا، اتجاه معاكس للبحر)</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Crust+Bistro+St+Julians+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">Triq Elija Zammit، سان جِليان · 4.6 على 311 مراجعة · 9:00am–4:00pm يوميًا · إحداثيات مؤكدة 35.9229, 14.4880</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9228621%2C14.4880302&amp;query_place_id=ChIJJYEVgsRFDhMRvnwZOteorU8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">12:30pm–3:45pm</div>
       <div class="stop-main">
@@ -976,12 +983,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Café del Mar</div>
       <span class="opt-booked-badge opt-badge-booked">✅ محجوز ومؤكد — مرجع #16771، VIP Bed، €50 مدفوعة.</span>
       <p class="opt-desc">يفتح 10:00، استلام قبل 13:00. أشهر وأكبر بيتش كلوب بمالطا؛ مسبح إنفينيتي، DJ، جمهور وحركة طول اليوم. نفس المكان اللي بنرجعله ليلة 7 سبتمبر لـCamelPhat، فزيارة اليوم منفصلة زمنيًا بأربع أيام</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Beefbar on the Beach</div>
       
       <p class="opt-desc">Luxury pool club؛ أهدأ وأكثر حصرية. بديل لو حبينا يوم أخف اجتماعيًا</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Beefbar+on+the+Beach+Malta&amp;query_place_id=ChIJffRKnupPDhMRnRCtYTtPAL8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9524924%2C14.4108892&amp;query_place_id=ChIJffRKnupPDhMRnRCtYTtPAL8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">3:45pm–4:15pm</div>
       <div class="stop-main">
@@ -993,10 +1000,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🚕 الانتقال إلى الفندق</h4>
         <p class="stop-desc">Café del Mar (St. Paul&#x27;s Bay) → St. Julian&#x27;s، ~25 دقيقة بالتاكسي/Bolt</p>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">4:40pm–5:18pm</div>
+      <div class="stop-time">4:40pm–5:25pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🚿 دش + تجهيز</h4>
-        <p class="stop-desc">38 دقيقة — كافية لدش سريع وتغيير؛ الاسترخاء الفعلي أخذناه بالبيتش والعشاء، فهذا بس تبديل ملابس. هامش إضافي 12 دقيقة قبل الانتقال لـSliema بسبب موعد العشاء المؤكد (3:45pm)</p>
+        <p class="stop-desc">45 دقيقة · 🎒 خذ معك شنطة صغيرة فيها ملابس السهرة — لو تأخر رسو القارب تبدّل بسرعة أو تذهب مباشرة</p>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">5:30pm–6:00pm</div>
       <div class="stop-main">
@@ -1015,16 +1022,22 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-booked-badge stop-badge-booked">✅ محجوز</p><p class="stop-desc">الحفلة 6:30pm–10:30pm · القارب يبحر 7:00pm ويرسو 10:30pm</p>
         <p class="stop-desc">🎧 Vangar 7:00 · Leena Punks 8:00 · John O&#x27;Callaghan 9:00</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/tickets" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured — التذاكر</a></div>
       </div></li><li class="stop ph-night">
-      <div class="stop-time">10:30pm–10:45pm</div>
+      <div class="stop-time">10:45pm–11:10pm</div>
       <div class="stop-main">
-        <h4 class="stop-title">🚕 من الميناء إلى Paceville</h4>
-        <p class="stop-desc">الوصول لـPassion 10:45pm · باص المهرجان €3 أو تاكسي · Passion داخل Paceville، أي مشي من السكن عند العودة</p>
+        <h4 class="stop-title">🚕 من الميناء إلى السكن</h4>
+        <p class="stop-desc">ربع ساعة للنزول وتبديل السوار بعد الرسو، ثم ~25 دقيقة لسان جِليان</p>
       </div></li><li class="stop ph-night">
-      <div class="stop-time">10:45pm–4:00am</div>
+      <div class="stop-time">11:10pm–11:40pm</div>
+      <div class="stop-main">
+        <h4 class="stop-title">🚿 دش + تبديل</h4>
+        <p class="stop-desc">بعد أربع ساعات على القارب · Passion على بعد دقائق مشيًا</p>
+      </div></li><li class="stop ph-night">
+      <div class="stop-time">11:45pm–حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🎧 Passion Club, Paceville — Opening Party</h4>
         <p class="stop-booked-badge stop-badge-booked">✅ محجوز</p><p class="stop-desc">Triq Paceville — مقابل Toy Room وعلى بعد 100م من فندق SoCity · الأبواب <strong>10:30pm</strong> · <strong>آخر دخول 12:30am</strong></p>
-        <p class="stop-desc">🎧 Heart &amp; Hawk 10:30 · Leena Punks 12:00 · <strong>Craig Connelly 1:00</strong> · Jay Crystal 3:00 · حتى 4:00am</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/tickets" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Passion+Club+Paceville+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">🎧 Leena Punks 12:00 · <strong>Craig Connelly 1:00</strong> · Jay Crystal 3:00 · حتى 4:00am · الخروج حسب الطاقة</p>
+        <p class="why">⚠️ آخر دخول 12:30am وهامشك 45 دقيقة — لو رسا القارب متأخرًا، ألغِ الدش وتوجّه مباشرة</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/tickets" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9240977%2C14.4888700&amp;query_place_id=ChIJTQV7KilFDhMRBBqYIG0e9MM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -1032,7 +1045,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         
       </div></li></ol>
   <div class="day-foot"><p class="daynote">🔥 اليوم مقصود كـSignature: Café del Mar نهارًا + Driftwood Sunset Boat + Captured ليلًا. لا نضيف نشاطًا ثقيلًا آخر</p></div>
-</article><article class="day city-mt" id="d4" data-city="mt">
+</article><article class="day city-mt" id="d4" data-city="mt" data-date="2026-09-04">
   <header class="day-head">
     <div class="day-date"><span class="dd">04.09</span><span class="dw">الجمعة</span></div>
     <h3 class="day-title">مسبح + Gianpula</h3>
@@ -1057,12 +1070,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Manouche Craft Bakery</div>
       
       <p class="opt-desc">بداية مريحة قبل يوم طويل</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Manouche+Craft+Bakery+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9179070%2C14.4894274&amp;query_place_id=ChIJsUggIkJFDhMRE5_G4yj4Tq4" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">U Bistrot</div>
       
       <p class="opt-desc">Brunch أهدأ إذا احتجت نومًا أكثر</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=U+Bistrot+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9142790%2C14.4936812&amp;query_place_id=ChIJT1dDw0BFDhMRPkiM-i6KfWw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">12:30pm–4:30pm</div>
       <div class="stop-main">
@@ -1072,22 +1085,22 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">مسبح Mercury (السطح)</div>
       
       <p class="opt-desc">داخل سكنك · صفر انتقال · تصعد للراحة متى تعبت</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Mercury+Tower+St+Julians&amp;query_place_id=ChIJI3DMZ2lFDhMRRsKyz3_zAiM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9231259%2C14.4894831&amp;query_place_id=ChIJI3DMZ2lFDhMRRsKyz3_zAiM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Aqualuna — Gżira</div>
       
       <p class="opt-desc">بيتش كلوب حقيقي بنزول للبحر · 4.6 على 3,145 مراجعة · دخول €20–30 شامل sunbed · 10–12 دقيقة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Aqualuna+Gzira+Malta&amp;query_place_id=ChIJA1LwMaFFDhMR-PCctsrC8Hc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9070952%2C14.4985796&amp;query_place_id=ChIJA1LwMaFFDhMR-PCctsrC8Hc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">4:30pm–6:15pm</div>
+      <div class="stop-time">4:30pm–6:00pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🏨 راحة ممتدة</h4>
-        <p class="stop-desc">105 دقائق — الليلة تمتد لـ4:00am وقبلها ليلة القارب</p>
+        <p class="stop-desc">90 دقيقة — الليلة تمتد لـ4:00am وقبلها ليلة القارب</p>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">6:15pm–6:30pm</div>
+      <div class="stop-time">6:00pm–6:30pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🚕 الانتقال إلى Mdina</h4>
-        <p class="stop-desc">~15 دقيقة · المطعم قريب من Gianpula</p>
+        <p class="stop-desc">~25–30 دقيقة من سان جِليان · المطعم قريب من Gianpula</p>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">6:30pm–7:45pm</div>
       <div class="stop-main">
@@ -1097,12 +1110,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">The Knights Kitchen — Mdina</div>
       
       <p class="opt-desc">4.8 على 2,904 مراجعة — الأكبر في قائمة مالطا · مفتوح 5:00pm–11:00pm يوميًا · تراس بإطلالة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=The+Knights+Kitchen+Mdina+Malta&amp;query_place_id=ChIJAdlzq2tRDhMRiuGXOjPdx-8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8871315%2C14.4021948&amp;query_place_id=ChIJAdlzq2tRDhMRiuGXOjPdx-8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Chukkas — Mosta</div>
       
-      <p class="opt-desc">ستيك هاوس 4.6 على 1,073 · ⚠️ يفتح 7:00pm فقط ومزدحم — يحتاج حجز عبر bookia.mt</p>
-      <div class="lnks"><a class="lnk" href="https://bookia.mt/restaurants-malta/chukkas-mosta" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Bookia</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Chukkas+Mosta+Malta&amp;query_place_id=ChIJwwPvxwhRDhMRcphZtJwk4HQ" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">ستيك هاوس 4.6 على 1,073 · ⚠️ يفتح 7:00pm — لا يصلح لموعد 6:30pm إلا بتأخير العشاء · حجز عبر bookia.mt</p>
+      <div class="lnks"><a class="lnk" href="https://bookia.mt/restaurants-malta/chukkas-mosta" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Bookia</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9019848%2C14.4198029&amp;query_place_id=ChIJwwPvxwhRDhMRcphZtJwk4HQ" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">7:45pm–8:00pm</div>
       <div class="stop-main">
@@ -1112,7 +1125,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">8:00pm–4:00am</div>
       <div class="stop-main">
         <h4 class="stop-title">🔥 Liberation London + Mystical Experience</h4>
-        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — ضمن تذكرة Captured 4-Day.</p><p class="stop-desc">الأبواب 8:00pm · Liberation على مسرح Phoenix، وMystical Experience (Psy-Trance) على The Rooftop — الاثنان بنفس التذكرة</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Gianpula+Village+Malta&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — ضمن تذكرة Captured 4-Day.</p><p class="stop-desc">الأبواب 8:00pm · Liberation على مسرح Phoenix، وMystical Experience (Psy-Trance) على The Rooftop — الاثنان بنفس التذكرة</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -1120,7 +1133,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         
       </div></li></ol>
   <div class="day-foot"><p class="daynote">💆 نهار خفيف مقصود — الليلة تمتد لـ4:00am وبعدها Gatecrasher بنفس الطول</p></div>
-</article><article class="day city-mt" id="d5" data-city="mt">
+</article><article class="day city-mt" id="d5" data-city="mt" data-date="2026-09-05">
   <header class="day-head">
     <div class="day-date"><span class="dd">05.09</span><span class="dw">السبت</span></div>
     <h3 class="day-title">Recovery + Gatecrasher</h3>
@@ -1145,12 +1158,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Brunch &amp; Beyond</div>
       
       <p class="opt-desc">بداية متأخرة ومريحة بعد Gianpula Day 1</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Brunch+%26+Beyond+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9188461%2C14.4895421&amp;query_place_id=ChIJy4CeLwBFDhMRQAbSOpntYQo" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Lot 61 Coffee Roasters</div>
       
       <p class="opt-desc">خيار أخف وأسرع للقهوة قبل الـSpa</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Lot+61+Coffee+Roasters+St+Julian%27s+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8961000%2C14.5116000&amp;query_place_id=ChIJw26enitFDhMRt8k_uH4Sf3w" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">1:00pm–2:30pm</div>
       <div class="stop-main">
@@ -1166,12 +1179,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Cabana Club — ME Malta</div>
       
       <p class="opt-desc">Gort Street، سان جِليان — مشي من السكن · 4.8 على 150 مراجعة · حتى 7:00pm · مسبح وكابانات، هادئ بلا حفلات</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cabana+Club+Malta&amp;query_place_id=ChIJQ_cC8FRFDhMR52StvYoR2Rc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9224698%2C14.4891176&amp;query_place_id=ChIJQ_cC8FRFDhMR52StvYoR2Rc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">The Reef Club — Westin</div>
       
       <p class="opt-desc">4.4 على 97 · مشي أيضًا · ⚠️ شكوى موثقة: دخول €45 لا يشمل المسبح لغير النزلاء — اسأل قبل الدفع</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=The+Reef+Club+St+Julians&amp;query_place_id=ChIJ5eEtdK5FDhMRY_rV_WO7JWI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9252289%2C14.4935232&amp;query_place_id=ChIJ5eEtdK5FDhMRY_rV_WO7JWI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">5:30pm–6:15pm</div>
       <div class="stop-main">
@@ -1191,12 +1204,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Root 81</div>
       
       <p class="opt-desc">Mediterranean/European option near Gianpula; strong food experience without making the pre-party meal heavy</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Root+81+Rabat+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8831673%2C14.4038929&amp;query_place_id=ChIJCSbmP75RDhMRGYYXs2oObQw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">The Fork And Cork</div>
       
       <p class="opt-desc">Mediterranean/European backup near Gianpula; more polished if you want a fuller dinner</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=The+Fork+And+Cork+Rabat+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8831947%2C14.4040036&amp;query_place_id=ChIJ7YVfFb5RDhMR6kKV2k0zz8A" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">7:35pm–7:50pm</div>
       <div class="stop-main">
@@ -1211,12 +1224,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Captured / Gatecrasher Malta ⭐</div>
       <span class="opt-booked-badge opt-badge-booked">✅ محجوز — ضمن تذكرة Captured 4-Day.</span>
       <p class="opt-desc">Gianpula Day 2 · Gatecrasher Main Room + Wax Format in Groove Garden · صفحة التذاكر تقول 7:00pm وموقع Gianpula يقول 8:00pm — ندخل 8:00pm</p>
-      <div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/tickets/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Gianpula+Village+Malta&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Gianpula</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/tickets/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Gianpula</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Wild West @ Toy Room</div>
       
       <p class="opt-desc">Backup تجاري/اجتماعي إذا قررنا لاحقًا عدم تكرار Captured</p>
-      <div class="lnks"><a class="lnk" href="https://www.toyroomclubmalta.com/events" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Toy Room</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Toy+Room+Malta&amp;query_place_id=ChIJZ_9G9W9FDhMRO7f2C1ePmcw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.toyroomclubmalta.com/events" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Toy Room</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9242198%2C14.4890574&amp;query_place_id=ChIJZ_9G9W9FDhMRO7f2C1ePmcw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -1224,7 +1237,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         
       </div></li></ol>
   <div class="day-foot"><p class="daynote">💆 يوم Recovery بعد ليلة ثقيلة؛ الدخول من بداية Gatecrasher الساعة 19:00 بدل انتظار حتى 21:00</p><p class="daynote">🟡 حالة اليوم: الهيكل مقفل مبدئيًا. Gatecrasher هو الخيار الأول؛ جميع الحفلات تبقى ضمن Final Party Audit</p></div>
-</article><article class="day city-mt" id="d6" data-city="mt">
+</article><article class="day city-mt" id="d6" data-city="mt" data-date="2026-09-06">
   <header class="day-head">
     <div class="day-date"><span class="dd">06.09</span><span class="dw">الأحد</span></div>
     <h3 class="day-title">Valletta + Judgement Sundays + MOVE IT</h3>
@@ -1241,22 +1254,27 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🌅 صحوة</h4>
         
       </div></li><li class="stop ph-day">
-      <div class="stop-time">11:00am–12:00pm</div>
+      <div class="stop-time">11:00am–11:30am</div>
+      <div class="stop-main">
+        <h4 class="stop-title">🚕 الانتقال إلى فاليتا</h4>
+        <p class="stop-desc">~25 دقيقة · الفطور وجولة اليوم كلاهما في فاليتا — انتقال واحد</p>
+      </div></li><li class="stop ph-day">
+      <div class="stop-time">11:30am–12:30pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🍳 الفطور —</h4>
         <div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">TRIBE Valletta</div>
+      <div class="opt-name">TRiBE Valletta</div>
       
-      <p class="opt-desc">Brunch مريح وبداية متأخرة بعد 5 سبتمبر</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=TRIBE+Valletta+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <p class="opt-desc">84 South Street، فاليتا · 8:00am–9:00pm يوميًا · 4.4 على 1,775 · على بعد دقائق من Strait Street</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8966042%2C14.5105713&amp;query_place_id=ChIJPc-bprFFDhMRYl7jPIrDghU" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Elephant Shoe</div>
       
-      <p class="opt-desc">خيار أهدأ ومناسب لبداية يوم Valletta</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Elephant+Shoe+Valletta+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">Castille Street، فاليتا · الأحد 9:00am–4:00pm · 4.7 على 1,164</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8953002%2C14.5119658&amp;query_place_id=ChIJ8z7xNORFDhMRi1yt-IdCD9g" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">12:30pm–3:45pm</div>
+      <div class="stop-time">12:45pm–3:45pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🏛️ Valletta — Strait Street</h4>
         <p class="stop-desc">مشي على Strait Street — شارع كوكتيلات وبارات صغيرة حيوية، أجواء اجتماعية خفيفة. توقف بـTico Tico أو Yard 32 لمشروب</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Valletta+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
@@ -1276,12 +1294,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Is-Suq Tal-Belt</div>
       
       <p class="opt-desc">سوق طعام حيوي بمبنى تاريخي مرمّم؛ أكشاك عالمية ومحلية، أجواء اجتماعية كاجوال — بدل فاين داينينج رسمي. Central Valletta، مباشرة بعد الغروب</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Is-Suq+Tal-Belt+Valletta&amp;query_place_id=ChIJ51o0nytFDhMRO9crAIk6f2A" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8978617%2C14.5145156&amp;query_place_id=ChIJ51o0nytFDhMRO9crAIk6f2A" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Hard Rock Cafe Valletta Waterfront</div>
       <span class="opt-booked-badge opt-badge-walkin">🚶 Walk-in</span>
       <p class="opt-desc">سلسلة عالمية، مقاعد كثيرة، صفر حاجة حجز مسبق. (تنبيه: Beati Paoli القديمة كانت بديل غير موثوق — تحتاج حجز حتمي هي بردها)</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Hard+Rock+Cafe+Valletta+Waterfront" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8903672%2C14.5081678&amp;query_place_id=ChIJSe_KnStFDhMRg8GP9rH9FQw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">5:15pm–5:40pm</div>
       <div class="stop-main">
@@ -1296,13 +1314,13 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">7:10pm–8:00pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🚕 الانتقال إلى Gianpula Village</h4>
-        <p class="stop-desc">🟢 متحقق منه: 25-30 دقيقة بالتاكسي/Bolt من St. Julian&#x27;s (مصدر متخصص بـGianpula، €15-20). نصل بهامش قبل دخولنا المتعمد الساعة 8:00pm</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Gianpula+Village+Malta&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">🟢 متحقق منه: 25-30 دقيقة بالتاكسي/Bolt من St. Julian&#x27;s (مصدر متخصص بـGianpula، €15-20). نصل بهامش قبل دخولنا المتعمد الساعة 8:00pm</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">8:00pm–11:30pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🔥 Captured — Judgement Sundays (Grand Finale)</h4>
         <p class="stop-booked-badge stop-badge-booked">✅ محجوز — ضمن تذكرة Captured 4-Day.</p><p class="stop-desc">⚠️ تغيّر المكان رسميًا: <strong>Rooftop Pool</strong> لا Marrakech · Gianpula Village · 8:00pm–4:00am · فيه مسبح اختياري وليس جزءًا من حلبة الرقص، فاللباس حر</p>
-        <p class="stop-desc">🎧 Matt Cheliotis 8:00 · Gian 9:00 · Signum 10:00 · <strong>Judge Jules 11:30</strong> · Eddie Halliwell 1:00 · Sam Mitcham 2:30</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Gianpula+Village+Malta&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">🎧 Matt Cheliotis 8:00 · Gian 9:00 · Signum 10:00 · <strong>Judge Jules 11:30</strong> · Eddie Halliwell 1:00 · Sam Mitcham 2:30</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-night">
       <div class="stop-time">11:30pm–12:00am</div>
       <div class="stop-main">
@@ -1312,7 +1330,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">12:00am–4:00am</div>
       <div class="stop-main">
         <h4 class="stop-title">🎧 MOVE IT! — Gianpula</h4>
-        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — طلب WTPODE، €25.</p><p class="stop-desc">تأكيد رسمي: رسوم دخول إضافية €10 بعد 1:00am بالضبط (مو تقدير). Latin / Reggaeton / Dembow / Afrotrap · Open-air. استمرار مباشر لنفس ليلة Captured — الاثنان محجوزان ومتتاليان، مو بديلين لبعض</p><div class="lnks"><a class="lnk" href="https://gianpulavillage.com/upcoming_events/move-it-19/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Gianpula</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Gianpula+Village+Malta&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — طلب WTPODE، €25.</p><p class="stop-desc">تأكيد رسمي: رسوم دخول إضافية €10 بعد 1:00am بالضبط (مو تقدير). Latin / Reggaeton / Dembow / Afrotrap · Open-air. استمرار مباشر لنفس ليلة Captured — الاثنان محجوزان ومتتاليان، مو بديلين لبعض</p><div class="lnks"><a class="lnk" href="https://gianpulavillage.com/upcoming_events/move-it-19/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Gianpula</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -1320,7 +1338,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         
       </div></li></ol>
   <div class="day-foot"><p class="daynote">🔥 يوم Signature: Grand Finale الرسمي لـCaptured (Judgement Sundays) + MOVE IT بنفس المجمع، بدون تعارض ولا ضغط — راحة 90 دقيقة محفوظة بالضبط</p><p class="daynote">🟢 محلول بالكامل: Judgement Sundays مضافة (كانت غائبة)، راحة 90 دقيقة بالضبط، عشاء حقيقي، دخول متأخر متعمد للفعاليتين (بدون خطر Last Entry مؤكد)، مسافة Gianpula متحقق منها (25-30 دقيقة)</p></div>
-</article><article class="day city-mt" id="d7" data-city="mt">
+</article><article class="day city-mt" id="d7" data-city="mt" data-date="2026-09-07">
   <header class="day-head">
     <div class="day-date"><span class="dd">07.09</span><span class="dw">الاثنين</span></div>
     <h3 class="day-title">Beach Day + CamelPhat</h3>
@@ -1337,24 +1355,29 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🌅 صحوة</h4>
         
       </div></li><li class="stop ph-day">
-      <div class="stop-time">11:00am–12:00pm</div>
+      <div class="stop-time">11:00am–11:30am</div>
+      <div class="stop-main">
+        <h4 class="stop-title">🚕 الانتقال إلى St Paul&#x27;s Bay</h4>
+        <p class="stop-desc">~25–30 دقيقة · الفطور وBeefbar كلاهما هناك — انتقال واحد بدل اثنين</p>
+      </div></li><li class="stop ph-day">
+      <div class="stop-time">11:30am–12:15pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🍳 الفطور —</h4>
         <div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
       <div class="opt-name">Michele&#x27;s Cafe</div>
       
-      <p class="opt-desc">بداية متأخرة ومريحة؛ من أفضل الخيارات المحلية في St. Paul&#x27;s Bay للفطور والـbrunch</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Michele&#x27;s+Cafe+St+Pauls+Bay+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <p class="opt-desc">St Paul&#x27;s Bay · 6:00am–10:00pm يوميًا · 4.7 على 1,304 · دقائق من Beefbar</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9540123%2C14.4197671&amp;query_place_id=ChIJ4U8HsKZPDhMR3bOsJR_hp2c" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">Lumar Restaurant Lounge</div>
+      <div class="opt-name">Lumar Cafe Lounge</div>
       
-      <p class="opt-desc">بديل بإطلالة بحرية وأجواء أهدأ</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Lumar+Restaurant+Lounge+St+Pauls+Bay+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">Islet Promenade · 6:30am–2:00am · 4.5 على 386 · إطلالة بحرية</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9532836%2C14.4164774&amp;query_place_id=ChIJvVY4MupPDhMRWhurfDcSPsE" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">12:00pm–12:30pm</div>
+      <div class="stop-time">12:15pm–12:30pm</div>
       <div class="stop-main">
-        <h4 class="stop-title">🚕 الانتقال إلى Beefbar</h4>
+        <h4 class="stop-title">🚶 الانتقال إلى Beefbar</h4>
         <p class="stop-desc">داخل نفس منطقة St. Paul&#x27;s Bay — مسافة قريبة، دخول 12:30pm بالضبط حسب التذكرة المؤكدة</p>
       </div></li><li class="stop ph-day">
       <div class="stop-time">12:30pm–4:30pm</div>
@@ -1365,12 +1388,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Beefbar on the Beach</div>
       <span class="opt-booked-badge opt-badge-booked">✅ محجوز ومؤكد</span>
       <p class="opt-desc">مرجع 9UZGDYH7Z496، 12:30-19:30، Front Row Sunbeds. الإجمالي €130 (80€ حد أدنى أكل/شرب + 50€ رسوم)، 60€ عربون مدفوع. براند دولي معروف، جمهور بالغين، إحساس فاخر وحصري. نخليها نصف يوم تقريبًا حتى يبقى Hotel Reset حقيقي قبل CamelPhat</p>
-      <div class="lnks"><a class="lnk" href="https://beefbar.com/malta-beach/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>Beefbar</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Beefbar+on+the+Beach+Malta&amp;query_place_id=ChIJffRKnupPDhMRnRCtYTtPAL8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://beefbar.com/malta-beach/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>Beefbar</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9524924%2C14.4108892&amp;query_place_id=ChIJffRKnupPDhMRnRCtYTtPAL8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Café del Mar (نهاري)</div>
       
       <p class="opt-desc">Backup لو حبينا طاقة اجتماعية أعلى؛ نفس المكان اللي نرجعله بالليل لـCamelPhat، فلو اخترناه نهارًا كمان يصير نفس المكان مرتين بيوم واحد — الأنسب فقط لو Beefbar ما توفر</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">4:30pm–5:00pm</div>
       <div class="stop-main">
@@ -1390,7 +1413,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">6:30pm–7:30pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🍽️ العشاء — Café del Mar Restaurant</h4>
-        <p class="stop-desc">عشاء بنفس مكان الحفلة مباشرة؛ قائمة متكاملة من الغداء للعشاء الراقي. كاجوال وطبيعي، بدون تنقل إضافي — ننتظر بداية CamelPhat بنفس المكان</p><div class="lnks"><a class="lnk" href="https://cafedelmar.com.mt/restaurant/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>المطعم</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">عشاء بنفس مكان الحفلة مباشرة؛ قائمة متكاملة من الغداء للعشاء الراقي. كاجوال وطبيعي، بدون تنقل إضافي — ننتظر بداية CamelPhat بنفس المكان</p><div class="lnks"><a class="lnk" href="https://cafedelmar.com.mt/restaurant/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>المطعم</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">8:00pm–1:00am</div>
       <div class="stop-main">
@@ -1401,13 +1424,13 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">District ft. CamelPhat</div>
       <span class="opt-booked-badge opt-badge-booked">✅ محجوز — طلب DIS-9176-KLSZYE · €20.</span>
       <p class="opt-desc">Early Bird · Café del Mar Malta, Triq It-Trunciera, St. Paul&#x27;s Bay · Doors 8PM، آخر دخول 11PM، 17+. الليلة الرئيسية لليوم</p>
-      <div class="lnks"><a class="lnk" href="https://cafedelmar.com.mt/event/district-ft-camelphat/?date=20260907" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Event</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://cafedelmar.com.mt/event/district-ft-camelphat/?date=20260907" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Event</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">RAVENATION — SoCity Rooftop</div>
       
       <p class="opt-desc">حفلة Captured الختامية · دخول مجاني للجميع · Paceville — مشي من السكن · التفاصيل تُعلن 3 سبتمبر على حسابات Captured</p>
       <p class="opt-desc">⚖️ CamelPhat مدفوع ومحجوز (€20) في St Paul&#x27;s Bay، تاكسي ذهابًا وإيابًا، وينتهي 1:00am · RAVENATION مجاني ومشي لكن التفاصيل غير معلنة. لا تبدّل إلا لو أُعلن line-up يستحق</p>
-      <div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=SoCity+Hotel+Paceville+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9238610%2C14.4891642&amp;query_place_id=ChIJtyMNTmlFDhMR-L7p6KT7RhI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -1415,7 +1438,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         
       </div></li></ol>
   <div class="day-foot"><p class="daynote">💡 هذا يوم Recovery نهاري: Beefbar نصف يوم + Hotel Reset حقيقي قبل CamelPhat؛ لا نضيف Club آخر بعده</p><p class="daynote">🟡 حالة اليوم: الهيكل معتمد مبدئيًا. CamelPhat هو الخيار الأول وDolce Vita البديل. مراجعة جميع الحفلات ستكون بعد اكتمال جدول الرحلة بالكامل</p></div>
-</article><article class="day city-mt" id="d8" data-city="mt">
+</article><article class="day city-mt" id="d8" data-city="mt" data-date="2026-09-08">
   <header class="day-head">
     <div class="day-date"><span class="dd">08.09</span><span class="dw">الثلاثاء</span></div>
     <h3 class="day-title">Victory Day + Grand Harbour</h3>
@@ -1440,12 +1463,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Lot 61 Coffee Roasters</div>
       
       <p class="opt-desc">Old Theatre Street، فاليتا — في اتجاه Grand Harbour · 4.7 على 2,005 مراجعة · 7:30am–6:00pm</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Lot+61+Coffee+Roasters+Valletta&amp;query_place_id=ChIJw26enitFDhMRt8k_uH4Sf3w" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8961%2C14.5116&amp;query_place_id=ChIJw26enitFDhMRt8k_uH4Sf3w" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Elephant Shoe — فاليتا</div>
       
       <p class="opt-desc">Castille Street · 4.7 على 1,163 · 8:00am–4:00pm (Grassy Hopper استُبعد — بلا تقييم ولا ساعات معلنة)</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Lot+Sixty+One+Coffee+Roasters+Valletta+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8953002%2C14.5119658&amp;query_place_id=ChIJ8z7xNORFDhMRi1yt-IdCD9g" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">12:30pm–2:45pm</div>
       <div class="stop-main">
@@ -1475,12 +1498,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Marina Terrace Pizzeria &amp; Brasserie</div>
       
       <p class="opt-desc">كاجوال، إطلالة مارينا، أجواء اجتماعية مريحة — مناسبة لعشاء سريع قبل ANOTR، قريبة من الفندق</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Marina+Terrace+Pizzeria+St+Julians+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9212745%2C14.4920533&amp;query_place_id=ChIJteMcUWpFDhMRvMwiPAAkc14" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">O’Sole Rooftop Garden</div>
       
       <p class="opt-desc">عشاء حقيقي بإطلالة على قبة St. John&#x27;s Co-Cathedral؛ ستيك وكوفتة وبيتزا، موسيقى حية مسائية. يحتاج رجعة لفاليتا</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=O+Sole+Rooftop+Garden+Valletta+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8993063%2C14.5127468&amp;query_place_id=ChIJP76I1hpFDhMRyCN2hu_GhzE" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">7:00pm–7:15pm</div>
       <div class="stop-main">
@@ -1490,7 +1513,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">7:15pm–12:00am</div>
       <div class="stop-main">
         <h4 class="stop-title">🔥 ANOTR — Fort Manoel</h4>
-        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — 6a7d694303c560a04ab9baef · €45</p><p class="stop-desc">الموقع أُعلن رسميًا: Fort Manoel · الحفلة 4:00pm–12:00am · ندخل 7:15pm لخمس ساعات تشمل الغروب والذروة والختام</p><div class="lnks"><a class="lnk" href="https://unomalta.com/event/anotr-malta-2026/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>UNO Malta</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Fort+Manoel+Gzira+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — 6a7d694303c560a04ab9baef · €45</p><p class="stop-desc">الموقع أُعلن رسميًا: Fort Manoel · الحفلة 4:00pm–12:00am · ندخل 7:15pm لخمس ساعات تشمل الغروب والذروة والختام</p><div class="lnks"><a class="lnk" href="https://unomalta.com/event/anotr-malta-2026/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>UNO Malta</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9031375%2C14.5051406&amp;query_place_id=ChIJc4ZvvDFFDhMRza4H5lLCo_Y" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-night">
       <div class="stop-time">12:15am</div>
       <div class="stop-main">
@@ -1498,7 +1521,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">الحفلة تنتهي منتصف الليل — نوم مبكر قبل صحوة 9:30am</p>
       </div></li></ol>
   <div class="day-foot"><p class="daynote">🇲🇹 8 سبتمبر عطلة وطنية في مالطا؛ نتوقع حركة/فعاليات أعلى من المعتاد، لذلك نتحقق من موقع العرض والوقت النهائي قبل الخروج</p><p class="daynote">🟢 الموقع لم يعد TBA: Fort Manoel مؤكد رسميًا. الحفلة تنتهي منتصف الليل لا 4:00am — وهذا ما يجعل يوم 9 (صحوة 9:30am) ممكنًا</p></div>
-</article><article class="day city-mt" id="d9" data-city="mt">
+</article><article class="day city-mt" id="d9" data-city="mt" data-date="2026-09-09">
   <header class="day-head">
     <div class="day-date"><span class="dd">09.09</span><span class="dw">الأربعاء</span></div>
     <h3 class="day-title">Spirit of Malta + Massage + Scala + Vybz Inna</h3>
@@ -1523,12 +1546,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">10:15am–10:30am</div>
       <div class="stop-main">
         <h4 class="stop-title">⛵ تسجيل الصعود — Spirit of Malta</h4>
-        <p class="stop-desc">Sliema Ferries، قرب Bouverie Bus Stop، مقابل Black Sheep bar</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Sliema+Ferries+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">Sliema Ferries، قرب Bouverie Bus Stop، مقابل Black Sheep bar</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9083125%2C14.5056875&amp;query_place_id=ChIJ9UYELgBFDhMR28izAurACTE" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-morning">
       <div class="stop-time">10:30am–5:30pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🌊 Spirit of Malta — رحلة بحرية كاملة</h4>
-        <p class="stop-booked-badge stop-badge-booked">✅ محجوز ومدفوع بالكامل — مرجع T1178-260816-69، €89.</p><p class="stop-desc">المشغّل الفعلي: Trendy Group Malta Limited (Lazy Pirate). تسجيل الصعود 10:00am، الانطلاق 10:30am من Sliema Ferries (قرب Bouverie Bus Stop، مقابل Black Sheep). كتماران كبير؛ سباحة وسنوركل بخلجان مالطا وكومينو (Blue Lagoon)، بوفيه بارد + بار مفتوح، موسيقى ورقص بعد الغداء. العودة لـSliema حوالي 5:30pm</p><div class="lnks"><a class="lnk" href="https://spiritofmalta.com/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>الموقع الرسمي</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Sliema+Ferries+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-booked-badge stop-badge-booked">✅ محجوز ومدفوع بالكامل — مرجع T1178-260816-69، €89.</p><p class="stop-desc">المشغّل الفعلي: Trendy Group Malta Limited (Lazy Pirate). تسجيل الصعود 10:00am، الانطلاق 10:30am من Sliema Ferries (قرب Bouverie Bus Stop، مقابل Black Sheep). كتماران كبير؛ سباحة وسنوركل بخلجان مالطا وكومينو (Blue Lagoon)، بوفيه بارد + بار مفتوح، موسيقى ورقص بعد الغداء. العودة لـSliema حوالي 5:30pm</p><div class="lnks"><a class="lnk" href="https://spiritofmalta.com/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>الموقع الرسمي</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9083125%2C14.5056875&amp;query_place_id=ChIJ9UYELgBFDhMR28izAurACTE" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">5:30pm–6:00pm</div>
       <div class="stop-main">
@@ -1538,7 +1561,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-time">6:00pm–7:15pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🧖‍♂️ International Massage Centre</h4>
-        <p class="stop-desc">الجلسة الثانية في مالطا، بمكان مختلف عن IKONIKA/HOLM (5 سبتمبر) لتنويع حقيقي بدل تكرار نفس السبا. وسط St. Julian&#x27;s مباشرة، 88 تقييم Tripadvisor (#3 من 20 بالمنطقة). ‏€45–75 تقريبًا</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=International+Massage+Centre+St+Julians+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-desc">الجلسة الثانية في مالطا، بمكان مختلف عن IKONIKA/HOLM (5 سبتمبر) لتنويع حقيقي بدل تكرار نفس السبا. وسط St. Julian&#x27;s مباشرة، 88 تقييم Tripadvisor (#3 من 20 بالمنطقة). ‏€45–75 تقريبًا</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9206663%2C14.4913182&amp;query_place_id=ChIJo7ldFWpFDhMRkyoqSSJKVqU" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">7:15pm–7:45pm</div>
       <div class="stop-main">
@@ -1558,12 +1581,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Scala ⭐</div>
       <span class="opt-booked-badge opt-badge-booked">✅ محجوز — مرجع M8Q-PK7، 20:30، Outdoor with view.</span>
       <p class="opt-desc">Mediterranean cuisine with classical French technique · Saqqajja Hill عند مدخل Mdina · terrace/views. اختيار Signature مناسب لك، مع meat options قوية مثل beef/lamb؛ نتجنب fish/raw fish</p>
-      <div class="lnks"><a class="lnk" href="https://scala.mt/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>Scala الرسمي</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=SCALA+Mdina+Malta&amp;query_place_id=ChIJtf24azZRDhMRlRJZApz-WQo" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://scala.mt/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>Scala الرسمي</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8831264%2C14.4035791&amp;query_place_id=ChIJtf24azZRDhMRlRJZApz-WQo" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Fontanella Tea Garden</div>
       <span class="opt-booked-badge opt-badge-walkin">🚶 Walk-in</span>
       <p class="opt-desc">&quot;عادة ما تحتاج حجز، مرونة للزيارة العفوية&quot; (مصدر مستقل). بمدينة نفسها، يفتح 10:00-23:30، وجبات خفيفة + إطلالات. (Lumière القديمة ما تحققنا هل تحتاج حجز أيضًا)</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Fontanella+Tea+Garden+Mdina+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8871467%2C14.4037212&amp;query_place_id=ChIJJcIaCsBRDhMRu-b-D4p6Klg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-night">
       <div class="stop-time">10:00pm–10:45pm</div>
       <div class="stop-main">
@@ -1574,7 +1597,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="stop-main">
         <h4 class="stop-title">🔥 Vybz Inna — Gully Vs Gaza Pre-Party</h4>
         <p class="why">💡 تقييم النادي 2.5 على 73 مراجعة — التذكرة مدفوعة، لكن الانسحاب المبكر خيار مفتوح لو لم تعجبك الأجواء. السكن قريب</p>
-        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — General Admission Phrase 2.</p><p class="stop-desc">🕐 الأبواب رسميًا 10:00pm، لكن التذكرة تقول &quot;Check in time: Anytime&quot; — ندخل 10:45pm (وقت وصولنا الفعلي بعد التجهيز)، بدون أي مشكلة. ⚠️ الموقع الصحيح Shadow Club (مو Passion Night Club كما كان مذكورًا). Dancehall حصريًا (80% Dancehall + 20% متنوع)، DJs ومقدمين من كل أوروبا. Shadow Club, San Ġiljan. أول Pre-Party لـFreedom Street</p><div class="lnks"><a class="lnk" href="https://www.eventbrite.co.uk/e/vybz-inna-malta-gully-vs-gaza-pre-party-tickets-1984899904045" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Eventbrite</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Shadow+Club+Malta&amp;query_place_id=ChIJXwMqurpFDhMRY94rigEQM1g" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — General Admission Phrase 2.</p><p class="stop-desc">🕐 الأبواب رسميًا 10:00pm، لكن التذكرة تقول &quot;Check in time: Anytime&quot; — ندخل 10:45pm (وقت وصولنا الفعلي بعد التجهيز)، بدون أي مشكلة. ⚠️ الموقع الصحيح Shadow Club (مو Passion Night Club كما كان مذكورًا). Dancehall حصريًا (80% Dancehall + 20% متنوع)، DJs ومقدمين من كل أوروبا. Shadow Club, San Ġiljan. أول Pre-Party لـFreedom Street</p><div class="lnks"><a class="lnk" href="https://www.eventbrite.co.uk/e/vybz-inna-malta-gully-vs-gaza-pre-party-tickets-1984899904045" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Eventbrite</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9240486%2C14.4889224&amp;query_place_id=ChIJXwMqurpFDhMRY94rigEQM1g" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -1582,7 +1605,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         
       </div></li></ol>
   <div class="day-foot"><p class="daynote">🌊 يوم بهوية واضحة: بحر حقيقي (Spirit of Malta) → مساج → عشاء Signature → Dancehall حصري. استثناء وحيد: صحوة 09:30 بدل 10:00 بسبب موعد القارب الصارم</p><p class="daynote">🟢 محلول بالكامل: بديل عن &quot;ليلة مرنة بدون هوية&quot; السابقة، بحر يطابق أولويتك الأولى، جدول متسلسل منطقيًا</p></div>
-</article><article class="day city-mt" id="d10" data-city="mt">
+</article><article class="day city-mt" id="d10" data-city="mt" data-date="2026-09-10">
   <header class="day-head">
     <div class="day-date"><span class="dd">10.09</span><span class="dw">الخميس</span></div>
     <h3 class="day-title">Last Night in Malta</h3>
@@ -1604,15 +1627,15 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🍳 الفطور —</h4>
         <div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">Brunch at Yard 32</div>
+      <div class="opt-name">Matcharia</div>
       
-      <p class="opt-desc">بداية مريحة لآخر يوم؛ نخلي الطاقة للّيلة الأخيرة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Yard+32+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <p class="opt-desc">Triq Gort — بجانب Mercury مباشرة · 4.6 على 762 مراجعة · 9:00am–7:00pm يوميًا</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9224861%2C14.4883805&amp;query_place_id=ChIJM-x-yU5FDhMRM761CDW5VnI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">Mint</div>
+      <div class="opt-name">The Brunch Club</div>
       
-      <p class="opt-desc">خيار أخف وأهدأ إذا فضّلنا بداية يوم بسيطة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Mint+Sliema+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">Triq Elija Zammit، سان جِليان · 4.6 على 311 · 9:00am–4:00pm (Yard 32 استُبعد — يفتح 5:00pm فقط، لا يصلح للفطور)</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9228621%2C14.4880302&amp;query_place_id=ChIJJYEVgsRFDhMRvnwZOteorU8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">12:30pm–4:30pm</div>
       <div class="stop-main">
@@ -1622,12 +1645,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Golden Bay + Għajn Tuffieħa</div>
       
       <p class="opt-desc">آخر جرعة بحر طبيعية في مالطا؛ شاطئ رملي ومناظر مختلفة عن Beach Clubs السابقة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Golden+Bay+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Golden Bay</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Ghajn+Tuffieha+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Għajn Tuffieħa</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9338697%2C14.3444612&amp;query_place_id=ChIJQUUQ2JlNDhMRIjec7ddy85w" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Golden Bay</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9295232%2C14.3431885&amp;query_place_id=ChIJheIbYppNDhMRM7YqMGjLogI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Għajn Tuffieħa</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Corinthia St George&#x27;s Bay Beach Club</div>
       
       <p class="opt-desc">بديل أكثر راحة وتنظيمًا إذا فضّلنا Beach Club بدل الشاطئ الطبيعي</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Corinthia+St+Georges+Bay+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9291820%2C14.4901340&amp;query_place_id=ChIJn0hL5m1FDhMR5jfQvDVrIGM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">4:30pm–5:10pm</div>
       <div class="stop-main">
@@ -1652,12 +1675,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">La Pira Maltese Kitchen</div>
       <span class="opt-booked-badge opt-badge-walkin">🚶 Walk-in</span>
       <p class="opt-desc">35 Merchants St، فاليتا · مطبخ مالطي تقليدي (€€) · الخميس 11:30am–10:00pm · ⚠️ الخدمة بطيئة بحسب المراجعات، فلا تستعجل</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=La+Pira+Maltese+Kitchen+Valletta&amp;query_place_id=ChIJ4YPjfStFDhMRYk6p3sDlIaw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8988404%2C14.5121176&amp;query_place_id=ChIJKbK0bSxFDhMR2Kl28WgpX6s&amp;query_place_id=ChIJ4YPjfStFDhMRYk6p3sDlIaw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Café Jubilee — فاليتا</div>
       <span class="opt-booked-badge opt-badge-walkin">🚶 Walk-in</span>
       <p class="opt-desc">St Lucia&#x27;s Street · 4.5 على 1,611 · مفتوح حتى 11:30pm يوميًا · ⚠️ Is-Suq استُبعد: يغلق 8:00pm أيام الخميس فقط</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=La+Pira+Valletta+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8988404%2C14.5121176&amp;query_place_id=ChIJKbK0bSxFDhMR2Kl28WgpX6s" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
       <div class="stop-time">8:45pm–9:15pm</div>
       <div class="stop-main">
@@ -1674,15 +1697,15 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🔥 آخر ليلة —</h4>
         <p class="why">✈️ الغد رحلة 12:55pm وانتقال للمطار 10:00am — المشي أهم من الـline-up. لا تلتزم بوقت انصراف</p><div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">TOUCHDOWN @ Tipsy Cat</div>
-      
-      <p class="opt-desc">Freedom Street Weekend Opening · 10:00pm–3:30am · St George&#x27;s Road, سان جِليان — شارع سكنك، مشي · 18+ مع هوية</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Tipsy+Cat+St+Georges+Road+San+Giljan+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
-      <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">DOSE @ Liquid Club</div>
       
-      <p class="opt-desc">تكنو حتى 4:00am · €10–15 · San Ġwann (تاكسي ذهابًا وإيابًا) · ⚠️ Line-up لم يُعلن — راجعه قبل يوم 10 وبدّل لو كان قويًا</p>
-      <div class="lnks"><a class="lnk" href="https://www.dosemalta.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>DOSE</a></div></div></div>
+      <p class="opt-desc">تكنو حتى 4:00am · €10–15 · 18+ · San Ġwann — تاكسي ذهابًا وإيابًا · ⚠️ Line-up لم يُعلن بعد</p>
+      <div class="lnks"><a class="lnk" href="https://www.dosemalta.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>DOSE</a></div></div><div class="opt opt-b">
+      <div class="opt-top"><span class="opt-rank">بديل</span></div>
+      <div class="opt-name">TOUCHDOWN @ Tipsy Cat</div>
+      
+      <p class="opt-desc">10:00pm–3:30am · St George&#x27;s Road — شارع سكنك · ⚠️ المكان غير موجود في خرائط جوجل باسمه؛ العنوان من إعلان الفعالية فقط. تحقق منه على الأرض قبل الاعتماد عليه</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Tipsy+Cat+St+Georges+Road+San+Giljan+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">حسب الطاقة</div>
       <div class="stop-main">
@@ -1690,7 +1713,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">⚠️ بكرة صحوة+فطور+تجهيز 9:00am، وانتقال للمطار 10:00am (رحلة ميلانو 12:55pm)</p>
       </div></li></ol>
   <div class="day-foot"><p class="daynote">✈️ غدًا رحلة 12:55 إلى ميلانو؛ Freedom Street مستبعد نهائيًا (تذكرة 4 أيام فقط، ‏$316.78، ما فيها خيار يوم واحد). DOSE هو الـNight Anchor المبدئي — أسبوعي، بدون التزام Multi-day Pass، لو ظهر Event أقوى (Electronic/House/Techno بLine-up أفضل) قبل الرحلة، يُستبدل</p><p class="daynote">🟡 حالة اليوم: DOSE @ Liquid Club هو الخيار الأول (Line-up TBA، نتحقق قبل الرحلة)؛ TwentyTwo بديل كامل. عشاء + نادي أسبوعي مرن (TwentyTwo أو Toy Room)، بدون شراء أي تذكرة</p></div>
-</article><article class="day city-mt" id="d11" data-city="mt">
+</article><article class="day city-mt" id="d11" data-city="mt" data-date="2026-09-11">
   <header class="day-head">
     <div class="day-date"><span class="dd">11.09</span><span class="dw">الجمعة</span></div>
     <h3 class="day-title">Malta → Milan</h3>
@@ -1707,15 +1730,15 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🌅 صحوة + فطور + تجهيز</h4>
         <p class="stop-desc">صحوة مريحة — ما فيه سبب نستعجل، الرحلة 12:55pm وهامش المطار محسوب صح</p><div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">Lot 61 Coffee Roasters</div>
-      
-      <p class="opt-desc">Bakery/coffee مريح، آخر فطور بمالطا</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Lot+61+Coffee+Roasters+St+Julian&#x27;s+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
-      <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Cafe G Malta</div>
       
-      <p class="opt-desc">Brunch/café option opening 08:00; more substantial if you want food rather than just coffee</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+G+Malta+St+Julian&#x27;s+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">8 Church St، سان جِليان — مشي من السكن · الجمعة 8:00am–3:00pm · 4.8 على 501</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9232188%2C14.4918983&amp;query_place_id=ChIJ9QnoNahFDhMRHomE63kx8Wg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="opt-top"><span class="opt-rank">بديل</span></div>
+      <div class="opt-name">Matcharia</div>
+      
+      <p class="opt-desc">Triq Gort — بجانب Mercury · 9:00am–7:00pm (Lot 61 استُبعد — موقعه في فاليتا، لا يصلح قبل انتقال المطار 10:00am)</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9224861%2C14.4883805&amp;query_place_id=ChIJM-x-yU5FDhMRM761CDW5VnI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-morning">
       <div class="stop-time">10:00am–10:30am</div>
       <div class="stop-main">
@@ -1745,12 +1768,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Il Mannarino Navigli 🥩</div>
       
       <p class="opt-desc">Meat-forward choice in Navigli; strong fit with your preference for beef/steak and convenient for the evening</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Il+Mannarino+Navigli+Milano&amp;query_place_id=ChIJwXE9IoLDhkcRYA2rjFUQ7L0" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=45.4522904%2C9.1764035&amp;query_place_id=ChIJwXE9IoLDhkcRYA2rjFUQ7L0" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Osteria dal Cornuto 🍝</div>
       
       <p class="opt-desc">Italian/Milanese-style backup if you want a more traditional dinner after the travel day</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Osteria+dal+Cornuto+Milan" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=45.4510668%2C9.1721215&amp;query_place_id=ChIJJ1oawmjDhkcRKXTW5q7WAns" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-night">
       <div class="stop-time">10:00pm</div>
       <div class="stop-main">
@@ -1758,7 +1781,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">I Mirador — خيار روفتوب هادئ نسبيًا في ميلانو</p>
       </div></li></ol>
   <div class="day-foot"><p class="daynote">⚠️ Travel Day: لا نحجز أي نشاط في الصباح غير الفطور/التجهيز والانتقال</p></div>
-</article><article class="day city-tr" id="d12" data-city="tr">
+</article><article class="day city-tr" id="d12" data-city="tr" data-date="2026-09-12">
   <header class="day-head">
     <div class="day-date"><span class="dd">12.09</span><span class="dw">السبت</span></div>
     <h3 class="day-title">ميلانو → الرياض</h3>
@@ -1783,12 +1806,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="opt-name">Ofelé.Coffee &amp; Cuddles</div>
       
       <p class="opt-desc">Bakery-bistro with breakfast/brunch, pancakes and savoury options; opens 08:30 Saturday</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Ofele+Coffee+Cuddles+Milan" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=45.4562823%2C9.1702681&amp;query_place_id=ChIJCV1itfzDhkcRHXyHIDVQitk" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
       <div class="opt-name">Caffetteria della Darsena</div>
       
       <p class="opt-desc">Quick coffee/pastry option by Darsena; opens early and suits a final light breakfast</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Caffetteria+della+Darsena+Milan" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=45.4545219%2C9.1731755&amp;query_place_id=ChIJQRaCdPzDhkcRsTViQUPYjTw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
       <div class="stop-time">12:00pm–1:00pm</div>
       <div class="stop-main">
@@ -2037,22 +2060,22 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="dbi-m">ليلة افتتاح Captured · Craig Connelly + Leena Punks · الأبواب 11:00pm · مشي من السكن</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 3 سبتمبر · أساسي</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🎧 سهر</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Passion+Club+Paceville+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🏰 fort manoel anotr gzira">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9240977%2C14.4888700&amp;query_place_id=ChIJTQV7KilFDhMRBBqYIG0e9MM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🏰 fort manoel anotr gzira">
       <div class="dbi-h"><h4>🏰 Fort Manoel — ANOTR</h4></div>
       <p class="dbi-m">جزيرة مانويل، Gżira · 4:00pm–12:00am · ~15 دقيقة من السكن</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 8 سبتمبر · أساسي</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🎧 سهر</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Fort+Manoel+Gzira+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ aqualuna gzira beach club sunbed">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9031375%2C14.5051406&amp;query_place_id=ChIJc4ZvvDFFDhMRza4H5lLCo_Y" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ aqualuna gzira beach club sunbed">
       <div class="dbi-h"><h4>🏖️ Aqualuna — Gżira</h4></div>
       <p class="dbi-m">بيتش كلوب بنزول للبحر · 4.6 على 3,145 مراجعة · دخول €20–30 شامل sunbed · حتى 10:00pm</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 4 سبتمبر · بديل</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🏖️ بيتش</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Aqualuna+Gzira+Malta&amp;query_place_id=ChIJA1LwMaFFDhMR-PCctsrC8Hc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ cabana club me malta pool st julians">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9070952%2C14.4985796&amp;query_place_id=ChIJA1LwMaFFDhMR-PCctsrC8Hc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ cabana club me malta pool st julians">
       <div class="dbi-h"><h4>🏖️ Cabana Club — ME Malta</h4></div>
       <p class="dbi-m">Gort Street، سان جِليان — مشي · 4.8 على 150 مراجعة · حتى 7:00pm</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 5 سبتمبر · أساسي</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🏖️ بيتش</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cabana+Club+Malta&amp;query_place_id=ChIJQ_cC8FRFDhMR52StvYoR2Rc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🎧 tipsy cat touchdown freedom street st georges road">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9224698%2C14.4891176&amp;query_place_id=ChIJQ_cC8FRFDhMR52StvYoR2Rc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🎧 tipsy cat touchdown freedom street st georges road">
       <div class="dbi-h"><h4>🎧 Tipsy Cat — TOUCHDOWN</h4></div>
       <p class="dbi-m">St George&#x27;s Road — شارع السكن · 10:00pm–3:30am · آخر ليلة، تنصرف متى شئت</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 10 سبتمبر · أساسي</span>
@@ -2157,7 +2180,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="dbi-m">Mediterranean cuisine with classical French technique · terrace/views · strong meat options including beef/lamb. Monday dinner 6:00pm–10:30pm</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 9 سبتمبر · محطة ثابتة / 9 سبتمبر · أساسي</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🍽️ مطاعم</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=SCALA+Mdina+Malta&amp;query_place_id=ChIJtf24azZRDhMRlRJZApz-WQo" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a><a class="lnk" href="https://scala.mt/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>الموقع الرسمي</a></div></div><div class="dbi" data-cat="food" data-loc="malta" data-q="🍽️ toro toro 🍽️ toro toro latin / upscale · level 11 mercury tower · mon–fri 18:00–01:00. latin / upscale · level 11 mercury tower · mon–fri 18:00–01:00">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8831264%2C14.4035791&amp;query_place_id=ChIJtf24azZRDhMRlRJZApz-WQo" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a><a class="lnk" href="https://scala.mt/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>الموقع الرسمي</a></div></div><div class="dbi" data-cat="food" data-loc="malta" data-q="🍽️ toro toro 🍽️ toro toro latin / upscale · level 11 mercury tower · mon–fri 18:00–01:00. latin / upscale · level 11 mercury tower · mon–fri 18:00–01:00">
       <div class="dbi-h"><h4>🍽️ Toro Toro</h4></div>
       <p class="dbi-m">Latin / upscale · Level 11 Mercury Tower · Mon–Fri 6:00pm–1:00am</p>
       <span class="dbi-usage dbi-unused">🔄 احتياطي</span>
@@ -2167,7 +2190,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="dbi-m">Modern steak / social · St Julian’s</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 2 سبتمبر · أساسي</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🍽️ مطاعم</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Lumi+Malta&amp;query_place_id=ChIJuzTh415FDhMRxn1YKQVwlJ8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="food" data-loc="malta" data-q="🍽️ noni 🍽️ noni modern maltese · michelin-level · tue–sat 18:00–22:00. modern maltese · michelin-level · tue–sat 18:00–22:00">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9238234%2C14.4874527&amp;query_place_id=ChIJuzTh415FDhMRxn1YKQVwlJ8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="food" data-loc="malta" data-q="🍽️ noni 🍽️ noni modern maltese · michelin-level · tue–sat 18:00–22:00. modern maltese · michelin-level · tue–sat 18:00–22:00">
       <div class="dbi-h"><h4>🍽️ Noni</h4></div>
       <p class="dbi-m">Modern Maltese · Michelin-level · Tue–Sat 6:00pm–10:00pm</p>
       <span class="dbi-usage dbi-unused">🔄 احتياطي</span>
@@ -2222,12 +2245,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="dbi-m">Luxury pool club · St Paul’s Bay · DJ daily 2:00pm–8:00pm · 10:00am–10:00pm</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 3 سبتمبر · بديل / 7 سبتمبر · محطة ثابتة +1</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🏖️ بحر</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Beefbar+on+the+Beach+Malta&amp;query_place_id=ChIJffRKnupPDhMRnRCtYTtPAL8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ café del mar malta 🏖️ café del mar malta pool + sunset + events · 10:00–00:00 · qawra. pool + sunset + events · 10:00–00:00 · qawra">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9524924%2C14.4108892&amp;query_place_id=ChIJffRKnupPDhMRnRCtYTtPAL8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ café del mar malta 🏖️ café del mar malta pool + sunset + events · 10:00–00:00 · qawra. pool + sunset + events · 10:00–00:00 · qawra">
       <div class="dbi-h"><h4>🏖️ Café del Mar Malta</h4></div>
       <p class="dbi-m">Pool + sunset + events · 10:00am–12:00am · Qawra</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 2 سبتمبر · محطة ثابتة / 5 سبتمبر · أساسي +3</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🏖️ بحر</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ medasia playa 🏖️ medasia playa pools + beach club + sushi/grill · sliema. pools + beach club + sushi/grill · sliema">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="beach" data-loc="malta" data-q="🏖️ medasia playa 🏖️ medasia playa pools + beach club + sushi/grill · sliema. pools + beach club + sushi/grill · sliema">
       <div class="dbi-h"><h4>🏖️ MedAsia Playa</h4></div>
       <p class="dbi-m">Pools + beach club + sushi/grill · Sliema</p>
       <span class="dbi-usage dbi-unused">🔄 احتياطي</span>
@@ -2247,12 +2270,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="dbi-m">3 Sep · doors 8:00pm · Thursday Pool Party final date</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 3 سبتمبر · محطة ثابتة / 4 سبتمبر · محطة ثابتة +2</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🎧 سهر</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🎧 neolitika x veltax 🎧 neolitika x veltax 5 sep · club phoenix / gianpula · electronic night. 5 sep · club phoenix / gianpula · electronic night">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🎧 neolitika x veltax 🎧 neolitika x veltax 5 sep · club phoenix / gianpula · electronic night. 5 sep · club phoenix / gianpula · electronic night">
       <div class="dbi-h"><h4>🎧 Neolitika x VELTAX</h4></div>
       <p class="dbi-m">5 Sep · Club Phoenix / Gianpula · electronic night</p>
       <span class="dbi-usage dbi-unused">🔄 احتياطي</span>
       <div class="dbi-f"><span class="dbi-loc">مالطا</span><span class="dbc">🎧 سهر</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Gianpula+Village+Malta&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🎧 freedom street europe 🎧 freedom street europe 10–13 sep; your date is 10 sep opening at uno. 10–13 sep; your date is 10 sep opening at uno">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="dbi" data-cat="night" data-loc="malta" data-q="🎧 freedom street europe 🎧 freedom street europe 10–13 sep; your date is 10 sep opening at uno. 10–13 sep; your date is 10 sep opening at uno">
       <div class="dbi-h"><h4>🎧 Freedom Street Europe</h4></div>
       <p class="dbi-m">10–13 Sep; your date is 10 Sep opening at UNO</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 6 سبتمبر · محطة ثابتة</span>
@@ -2337,7 +2360,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="dbi-m">2 Sep · Wednesday · Glow night · DJs + light shows · 11:00pm–4:00am</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 2 سبتمبر · محطة ثابتة / 5 سبتمبر · أساسي +5</span>
       <div class="dbi-f"><span class="dbi-loc">عام</span><span class="dbc">🎧 سهر</span></div>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Toy+Room+Malta&amp;query_place_id=ChIJZ_9G9W9FDhMRO7f2C1ePmcw" target="_blank" rel="noopener"><span class="lnk-i">↗</span>المصدر / الحجز</a></div></div><div class="dbi" data-cat="activity" data-loc="all" data-q="⛵ driftwood sunset boat party ⛵ driftwood sunset boat party 3 sep · sliema harbour · 19:00–22:30 · captured · john o&#x27;callaghan">
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9242198%2C14.4890574&amp;query_place_id=ChIJZ_9G9W9FDhMRO7f2C1ePmcw" target="_blank" rel="noopener"><span class="lnk-i">↗</span>المصدر / الحجز</a></div></div><div class="dbi" data-cat="activity" data-loc="all" data-q="⛵ driftwood sunset boat party ⛵ driftwood sunset boat party 3 sep · sliema harbour · 19:00–22:30 · captured · john o&#x27;callaghan">
       <div class="dbi-h"><h4>⛵ Driftwood Sunset Boat Party</h4></div>
       <p class="dbi-m">3 Sep · Sliema Harbour · 7:00pm–10:30pm · Captured · John O&#x27;Callaghan</p>
       <span class="dbi-usage dbi-used">✅ مستخدم — 3 سبتمبر · محطة ثابتة / 4 سبتمبر · محطة ثابتة +3</span>
@@ -2599,7 +2622,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
                 <div class="bk-top"><span class="bk-catbadge">🏖️ بيتش<span class="bk-citysep">·</span>مالطا</span><span class="bk-day">3 Sep</span></div>
                 <div class="bk-name">Café del Mar (نهاري)</div>
                 
-                <div class="bk-meta"><span class="bk-price">€50</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener">مرجع الحجز (#16771)</a></span></div>
+                <div class="bk-meta"><span class="bk-price">€50</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener">مرجع الحجز (#16771)</a></span></div>
                 <div class="bk-note">✅ محجوز ومؤكد — VIP Bed واحد، €50 مدفوعة بالكامل. يفتح 10:00am، لازم تستلم السرير قبل 1:00pm. ⚠️ ممكن يطلبون إخلاء السرير الساعة 6:00pm بسبب فعالية مسائية — ما يؤثر علينا، نطلع 3:45pm أصلًا</div>
               </div></div>
 <div class="bk-card is-done" data-id="cdmdinner" data-cat="restaurant" data-tier="must" data-city="malta">
@@ -2608,7 +2631,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
                 <div class="bk-top"><span class="bk-catbadge">🍽️ مطعم<span class="bk-citysep">·</span>مالطا</span><span class="bk-day">3 Sep</span></div>
                 <div class="bk-name">Café del Mar Restaurant (عشاء)</div>
                 
-                <div class="bk-meta"><span class="bk-price">—</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+del+Mar+Malta&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener">مرجع الحجز (API-0AT-SIC)</a></span></div>
+                <div class="bk-meta"><span class="bk-price">—</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=35.9588322%2C14.4235702&amp;query_place_id=ChIJFYp4MP1ODhMRYLFo7HF60zg" target="_blank" rel="noopener">مرجع الحجز (API-0AT-SIC)</a></span></div>
                 <div class="bk-note">✅ محجوز ومؤكد — 3:45pm، شخص واحد، Restaurant Area. عشاء بنفس مكان البيتش، قبل التوجه لـSliema</div>
               </div></div>
 <div class="bk-card is-done" data-id="ikonika" data-cat="spa" data-tier="must" data-city="malta">
@@ -2764,7 +2787,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
                 <div class="bk-top"><span class="bk-catbadge">🍽️ مطعم<span class="bk-citysep">·</span>مالطا</span><span class="bk-day">6 Sep</span></div>
                 <div class="bk-name">Is-Suq Tal-Belt</div>
                 
-                <div class="bk-meta"><span class="bk-price">—</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Is-Suq+Tal-Belt+Valletta&amp;query_place_id=ChIJ51o0nytFDhMRO9crAIk6f2A" target="_blank" rel="noopener">Maps</a></span></div>
+                <div class="bk-meta"><span class="bk-price">—</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=35.8978617%2C14.5145156&amp;query_place_id=ChIJ51o0nytFDhMRO9crAIk6f2A" target="_blank" rel="noopener">Maps</a></span></div>
                 <div class="bk-note">🚶 Walk-in — سوق طعام، بدّل 59 Republic الفاين داينينج</div>
               </div></div>
 <div class="bk-card bk-card-walkin" data-id="giannini" data-cat="restaurant" data-tier="walkin" data-city="malta">
@@ -2773,7 +2796,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
                 <div class="bk-top"><span class="bk-catbadge">🍽️ مطعم<span class="bk-citysep">·</span>مالطا</span><span class="bk-day">10 Sep</span></div>
                 <div class="bk-name">La Pira (آخر ليلة)</div>
                 
-                <div class="bk-meta"><span class="bk-price">—</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Is-Suq+Tal-Belt+Valletta&amp;query_place_id=ChIJ51o0nytFDhMRO9crAIk6f2A" target="_blank" rel="noopener">Maps</a></span></div>
+                <div class="bk-meta"><span class="bk-price">—</span><span class="bk-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=35.8978617%2C14.5145156&amp;query_place_id=ChIJ51o0nytFDhMRO9crAIk6f2A" target="_blank" rel="noopener">Maps</a></span></div>
                 <div class="bk-note">🚶 Walk-in — سوق طعام، بدّل Giannini الفاين داينينج</div>
               </div></div>
 <div class="bk-card bk-card-walkin" data-id="mannarino" data-cat="restaurant" data-tier="walkin" data-city="milano">
@@ -2815,6 +2838,50 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.p);});});
 
+  /* ==== jump to today's day on first open ==== */
+  function todayKey(){
+    var n=new Date();
+    return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');
+  }
+  function pickDay(){
+    var days=[].slice.call(document.querySelectorAll('.day[data-date]'));
+    if(!days.length) return null;
+    var k=todayKey();
+    var exact=days.filter(function(d){return d.dataset.date===k;})[0];
+    if(exact) return {el:exact,state:'today'};
+    if(k < days[0].dataset.date) return {el:days[0],state:'before'};
+    if(k > days[days.length-1].dataset.date) return {el:days[days.length-1],state:'after'};
+    var next=days.filter(function(d){return d.dataset.date>=k;})[0];
+    return next?{el:next,state:'next'}:null;
+  }
+  function markToday(){
+    var p=pickDay();
+    if(!p) return null;
+    if(p.state==='today'){
+      p.el.classList.add('is-today');
+      var head=p.el.querySelector('.day-tags');
+      if(head && !head.querySelector('.tag-today')){
+        var b=document.createElement('span');
+        b.className='tag tag-today'; b.textContent='اليوم';
+        head.insertBefore(b,head.firstChild);
+      }
+      var rl=document.querySelector('.rail-day[data-target="'+p.el.id+'"]');
+      if(rl) rl.classList.add('is-today');
+    }
+    return p;
+  }
+  function jumpToToday(smooth){
+    var p=markToday();
+    if(!p) return;
+    var y=p.el.getBoundingClientRect().top+window.pageYOffset-140;
+    window.scrollTo({top:y,behavior:smooth?'smooth':'auto'});
+    var rl=document.querySelector('.rail-day[data-target="'+p.el.id+'"]');
+    if(rl){
+      railLinksReady(function(){ setActive(p.el.id); centerRailLink(rl); });
+    }
+  }
+  var _rlq=[]; function railLinksReady(fn){ _rlq.push(fn); }
+
   /* rail active state */
   var railLinks=[].slice.call(document.querySelectorAll('.rail-day'));
   var dayEls=[].slice.call(document.querySelectorAll('.day'));
@@ -2844,6 +2911,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       navTimer=setTimeout(function(){isNavigating=false;},1500);
     });
   });
+  _rlq.forEach(function(fn){try{fn();}catch(e){}}); _rlq=[];
+
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){
       if(isNavigating) return;
@@ -2960,6 +3029,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       applyBkFilter();
     });
   });
+  /* auto-jump on first open */
+  try{ requestAnimationFrame(function(){ requestAnimationFrame(function(){ jumpToToday(false); }); }); }catch(e){}
+  var tBtn=document.getElementById('todayBtn');
+  if(tBtn){ tBtn.addEventListener('click',function(){ var t=document.querySelector('.nav button[data-p="plan"]'); if(t) t.click(); jumpToToday(true); }); }
   } /* end init */
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(init);
@@ -2968,5 +3041,6 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
   }
 })();
 </script>
+<button id="todayBtn" type="button">📍 اليوم</button>
 </body>
 </html>
