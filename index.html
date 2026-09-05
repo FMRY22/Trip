@@ -49,10 +49,18 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
 .cstat{background:rgba(12,27,36,.55);padding:12px 10px}
 .cstat b{display:block;font-family:var(--mono);font-size:19px;font-weight:500;color:#fff}
 .cstat span{font-size:11px;color:#9FC6CE}
+.trip-progress{margin-top:12px}
+.tp-top{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;margin-bottom:6px}
+.tp-label{color:#F7F2E9;font-weight:700}
+.tp-pct{color:#9FC6CE;font-family:var(--mono);font-size:11px}
+.tp-bar{height:8px;border-radius:99px;background:rgba(255,255,255,.15);overflow:hidden}
+.tp-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#c9663a,#e8a04a);width:0%;transition:width .6s ease}
 
 /* ── nav ───────────────────────────────── */
 .nav{position:sticky;top:0;z-index:40;background:rgba(247,242,233,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;gap:4px;overflow-x:auto;padding:9px 16px;max-width:1040px;margin:0 auto;scrollbar-width:none}
+.nav-in{display:flex;gap:4px;overflow-x:auto;padding:9px 16px;max-width:1040px;margin:0 auto;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 20px,#000 calc(100% - 20px),transparent);
+  mask-image:linear-gradient(to right,transparent,#000 20px,#000 calc(100% - 20px),transparent)}
 .nav-in::-webkit-scrollbar{display:none}
 .nav button{flex:0 0 auto;border:1px solid transparent;background:none;font-family:var(--body);font-size:13.5px;font-weight:600;
   color:var(--muted);padding:7px 13px;border-radius:999px;cursor:pointer;transition:.15s}
@@ -62,7 +70,9 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
 
 /* ── rail ──────────────────────────────── */
 .rail{position:sticky;top:47px;z-index:35;background:rgba(247,242,233,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.rail-in{display:flex;gap:6px;overflow-x:auto;padding:9px 16px;max-width:1040px;margin:0 auto;scrollbar-width:none}
+.rail-in{display:flex;gap:6px;overflow-x:auto;padding:9px 16px;max-width:1040px;margin:0 auto;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 20px,#000 calc(100% - 20px),transparent);
+  mask-image:linear-gradient(to right,transparent,#000 20px,#000 calc(100% - 20px),transparent)}
 .rail-in::-webkit-scrollbar{display:none}
 .rail-day{appearance:none;-webkit-appearance:none;font-family:inherit;cursor:pointer;text-align:start;flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:6px 10px 7px;min-width:96px;
   display:flex;flex-direction:column;gap:1px;transition:.15s}
@@ -107,10 +117,11 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
 
 /* timeline */
 .tl{list-style:none;margin:0;padding:6px 18px 8px}
-.stop{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line-2);position:relative}
+.stop{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line-2);position:relative}
 .stop:last-child{border-bottom:0}
-.stop-time{font-family:var(--mono);font-size:11.5px;white-space:nowrap;direction:ltr;text-align:right;font-weight:600;color:var(--ink);padding-top:2px;
+.stop-time{font-family:var(--mono);font-size:11.5px;white-space:normal;line-height:1.35;overflow-wrap:break-word;direction:ltr;text-align:right;font-weight:600;color:var(--ink);padding-top:2px;
   position:relative;padding-inline-start:14px}
+.stop-time.stop-time-ar{font-family:var(--body);direction:rtl}
 .stop-time::before{content:"";position:absolute;inset-inline-start:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--sea)}
 .stop-time::after{content:"";position:absolute;inset-inline-start:3px;top:15px;bottom:-22px;width:1px;background:var(--line)}
 .stop:last-child .stop-time::after{display:none}
@@ -118,6 +129,33 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
 .ph-day .stop-time::before{background:var(--sea)}
 .ph-evening .stop-time::before{background:var(--dusk)}
 .ph-night .stop-time::before{background:var(--night)}
+.ph-morning .stop-time{color:#A9761E}
+.ph-day .stop-time{color:var(--sea)}
+.ph-evening .stop-time{color:var(--dusk)}
+.ph-night .stop-time{color:var(--night)}
+.stop.is-now{background:rgba(27,138,90,.07);border-radius:14px;box-shadow:inset 0 0 0 1px rgba(27,138,90,.18)}
+.stop.is-now .stop-time::before{background:#1b8a5a;box-shadow:0 0 0 5px rgba(27,138,90,.22)}
+.now-badge{display:inline-flex;align-items:center;gap:5px;margin-inline-start:8px;font-size:10.5px;font-weight:700;
+  color:#fff;background:#1b8a5a;padding:3px 9px 3px 8px;border-radius:999px;vertical-align:middle;white-space:nowrap}
+.now-dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:nowPulse 1.4s ease-in-out infinite}
+@keyframes nowPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.5)}}
+@media(max-width:480px){
+  .stop.is-now::before{background:#1b8a5a;box-shadow:0 0 0 5px rgba(27,138,90,.22)}
+}
+@media(max-width:480px){
+  .stop{grid-template-columns:1fr;gap:4px;padding-block:15px;padding-inline-start:22px;padding-inline-end:0;position:relative}
+  .stop::before{content:"";position:absolute;inset-inline-start:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--sea)}
+  .stop::after{content:"";position:absolute;inset-inline-start:3px;top:15px;bottom:-15px;width:1px;background:var(--line)}
+  .stop:last-child::after{display:none}
+  .ph-morning .stop::before{background:var(--sun)}
+  .ph-day .stop::before{background:var(--sea)}
+  .ph-evening .stop::before{background:var(--dusk)}
+  .ph-night .stop::before{background:var(--night)}
+  .stop-time{display:inline-block;width:fit-content;justify-self:start;text-align:left;padding-inline-start:0;font-size:12px;
+    background:var(--line-2);padding:2px 9px;border-radius:99px;margin-bottom:6px}
+  .stop-time.stop-time-ar{padding:2px 9px}
+  .stop-time::before,.stop-time::after{display:none}
+}
 .stop-title{font-size:15.5px;font-weight:600;font-family:var(--body)}
 .stop-desc{margin:4px 0 0;color:var(--muted);font-size:13.5px}
 .stop-booked-badge,.opt-booked-badge{display:inline-block;font-weight:800;padding:3px 10px;border-radius:99px;margin:4px 0 2px}
@@ -140,11 +178,11 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
 .opt-name{font-weight:600;font-size:14.5px}
 .opt-desc{margin:3px 0 0;font-size:12.5px;color:var(--muted)}
 
-.lnks{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
-.lnk{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;color:var(--ink);
-  background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px 9px;transition:.15s}
+.lnks{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.lnk{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--ink);min-height:34px;
+  background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 12px;transition:.15s}
 .lnk:hover{border-color:var(--sea);color:var(--sea)}
-.lnk-i{font-size:11px}
+.lnk-i{font-size:11.5px}
 .day-foot{padding:12px 18px 16px;background:#FBF9F5;border-top:1px solid var(--line-2)}
 .daynote{margin:0 0 6px;font-size:12.5px;color:#5C5140}
 .daynote:last-child{margin:0}
@@ -170,7 +208,9 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
 .search{width:100%;border:1px solid var(--line);background:var(--card);border-radius:11px;padding:10px 13px;
   font-family:var(--body);font-size:14px;color:var(--ink)}
 .search:focus{outline:2px solid var(--sea);outline-offset:1px}
-.chips{display:flex;gap:6px;overflow-x:auto;margin-top:9px;scrollbar-width:none;padding-bottom:2px}
+.chips{display:flex;gap:6px;overflow-x:auto;margin-top:9px;scrollbar-width:none;padding-bottom:2px;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 16px),transparent);
+  mask-image:linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 16px),transparent)}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;
   font-family:var(--body);font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:.15s}
@@ -189,7 +229,7 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
 .dbi h4{font-size:15px;font-family:var(--body);font-weight:600}
 .dbi-score{font-family:var(--mono);font-size:11px;color:var(--dusk);white-space:nowrap}
 .dbi-m{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
-.dbi-usage{display:inline-block;margin-top:8px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px}
+.dbi-usage{display:inline-block;margin-top:8px;font-size:11px;font-weight:600;padding:5px 11px;border-radius:12px;line-height:1.5}
 .dbi-used{background:#EAF4EE;color:var(--moss);border:1px solid #CFE6D6}
 .dbi-unused{background:var(--paper);color:var(--muted);border:1px solid var(--line-2)}
 .dbi-f{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
@@ -294,9 +334,6 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:700;margin:0;line-height:1.3;let
   .tbl td+td{border-top:1px dashed var(--line-2)}
 }
 footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:12px;text-align:center}
-.top{position:fixed;inset-block-end:18px;inset-inline-end:18px;z-index:50;width:42px;height:42px;border-radius:50%;
-  background:var(--ink);color:var(--paper);border:0;font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s;box-shadow:var(--shadow)}
-.top.on{opacity:1;pointer-events:auto}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 @media print{.nav,.rail,.tools,.top{display:none!important}.panel{display:block!important}.day{break-inside:avoid}}
 @media (prefers-color-scheme: dark){
@@ -310,6 +347,9 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 .tag.tag-today{background:#c9663a;color:#fff;font-weight:700}
 .rail-day.is-today{outline:2px solid #c9663a;outline-offset:1px}
 #todayBtn{position:fixed;left:14px;bottom:14px;z-index:60;border:0;border-radius:999px;padding:10px 16px;background:#c9663a;color:#fff;font-weight:700;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
+.top{position:fixed;left:14px;bottom:64px;z-index:55;width:42px;height:42px;border-radius:50%;
+  background:var(--ink);color:var(--paper);border:0;font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s;box-shadow:var(--shadow)}
+.top.on{opacity:1;pointer-events:auto}
 </style>
 </head>
 <body>
@@ -330,6 +370,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <div class="cstat"><b>3</b><span>مدن</span></div>
       <div class="cstat"><b>5</b><span>رحلات طيران</span></div>
       <div class="cstat"><b>90</b><span>مكانًا في البنك</span></div>
+    </div>
+    <div class="trip-progress" id="tripProgress" hidden>
+      <div class="tp-top"><span class="tp-label" id="tpLabel">—</span><span class="tp-pct" id="tpPct">—</span></div>
+      <div class="tp-bar"><div class="tp-fill" id="tpFill"></div></div>
     </div>
   </div>
 </header>
@@ -450,7 +494,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="opt-desc">امتداد بعد الـ02:00 فقط لو الطاقة موجودة · 23:30–04:00 · مشي دقيقتين من Blue Marlin · 4.6 لكن على 109 مراجعات فقط (عيّنة صغيرة)</p>
       <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Perla+Restaurant+Club+Budva&amp;query_place_id=ChIJv03tIADVTRMR2lQWB0YII0o" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-morning">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         <p class="stop-desc">بدون وقت محدد؛ مشي من المدينة القديمة (~10 دقائق) أو دقيقتان لو كنت في Perla</p>
@@ -523,7 +567,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🎧 السهر — EXIT2Montenegro</h4>
         <p class="stop-booked-badge stop-badge-booked">✅ محجوز — تذكرة EL7QQMV7URS3N3EU.</p><p class="stop-desc">Charlotte de Witte + HUGEL · Bečići Beach</p><p class="why">🎧 مهم: التذكرة هي للـevent؛ وقت دخول الفنان/الـset الدقيق يُراجع من البرنامج الرسمي قبل الخروج، لذلك لا نبني عليه انتقالًا إضافيًا</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Becici+Beach+Montenegro" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a><a class="lnk" href="https://exit2montenegro.me/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>EXIT الرسمي</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         <p class="stop-desc">بدون وقت محدد؛ تاكسي من Bečići إلى Blue Marlin (~10 دقائق)</p>
@@ -597,7 +641,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">✅ محجوز — تذكرة EL7QQMV7URS3N3EU تغطي الليالي الثلاث؛ لا إجراء إضافي. الليلة الوسطى = أكبر حشد وأعلى طاقة اجتماعية · Bečići Beach</p>
         <p class="stop-desc">🎧 خروج متأخر مقصود بدل 9:00pm: تحصل على الذروة دون حرق الطاقة قبل يوم 30. المطعم على بعد مشي من الشاطئ</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Becici+Beach+Budva" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a><a class="lnk" href="https://exit2montenegro.me/lineup-budva/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>EXIT الرسمي</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         <p class="stop-desc">بدون وقت محدد؛ تاكسي من Bečići إلى Blue Marlin (~10 دقائق)</p>
@@ -675,7 +719,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🎧 السهر — EXIT2Montenegro</h4>
         <p class="stop-booked-badge stop-badge-booked">✅ محجوز — تذكرة EL7QQMV7URS3N3EU.</p><p class="stop-desc">Peggy Gou · Bečići Beach</p><p class="why">🎧 مهم: راجع الـline-up ووقت الـset النهائي قبل الخروج؛ التوقيت هنا مبني على نافذة الفعالية وليس على وقت فنان مؤكد</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Becici+Beach+Montenegro" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a><a class="lnk" href="https://exit2montenegro.me/" target="_blank" rel="noopener"><span class="lnk-i">↗</span>EXIT الرسمي</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         <p class="stop-desc">بدون وقت محدد؛ تاكسي من Bečići إلى Blue Marlin (~10 دقائق)</p>
@@ -770,7 +814,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🎧 Optional Club — Trocadero</h4>
         <p class="stop-desc">امتداد طبيعي لو الطاقة موجودة؛ نفس مكان آخر مشروب، بدون انتقال إضافي</p>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         
@@ -1039,7 +1083,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="stop-desc">🎧 Leena Punks 12:00 · <strong>Craig Connelly 1:00</strong> · Jay Crystal 3:00 · حتى 4:00am · الخروج حسب الطاقة</p>
         <p class="why">⚠️ آخر دخول 12:30am وهامشك 45 دقيقة — لو رسا القارب متأخرًا، ألغِ الدش وتوجّه مباشرة</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/tickets" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9240977%2C14.4888700&amp;query_place_id=ChIJTQV7KilFDhMRBBqYIG0e9MM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         
@@ -1048,8 +1092,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 </article><article class="day city-mt" id="d4" data-city="mt" data-date="2026-09-04">
   <header class="day-head">
     <div class="day-date"><span class="dd">04.09</span><span class="dw">الجمعة</span></div>
-    <h3 class="day-title">مسبح + Gianpula</h3>
-    <p class="day-sub">نهار هادئ → راحة ممتدة → Liberation London + Mystical Experience (سطح Gianpula)</p>
+    <h3 class="day-title">Manta + Gianpula</h3>
+    <p class="day-sub">بيتش كلوب → راحة طويلة → خروج واحد 8:30pm: مدينة ثم Gianpula</p>
     <div class="day-tags">
       <span class="tag tag-city">مالطا</span>
       <span class="tag tag-mode">أثقل ليلة</span>
@@ -1077,57 +1121,59 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="opt-desc">Brunch أهدأ إذا احتجت نومًا أكثر</p>
       <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9142790%2C14.4936812&amp;query_place_id=ChIJT1dDw0BFDhMRPkiM-i6KfWw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">12:30pm–4:30pm</div>
+      <div class="stop-time">12:30pm–5:00pm</div>
       <div class="stop-main">
-        <h4 class="stop-title">🏊 نهار هادئ —</h4>
-        <p class="why">💡 Mystical Experience ليست حفلة نهارية — هي Psy-Trance على سطح Gianpula ضمن تذكرة الليلة نفسها. النهار حر</p><div class="opts"><div class="opt opt-a">
-      <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">مسبح Mercury (السطح)</div>
-      
-      <p class="opt-desc">داخل سكنك · صفر انتقال · تصعد للراحة متى تعبت</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9231259%2C14.4894831&amp;query_place_id=ChIJI3DMZ2lFDhMRRsKyz3_zAiM" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
-      <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">Aqualuna — Gżira</div>
-      
-      <p class="opt-desc">بيتش كلوب حقيقي بنزول للبحر · 4.6 على 3,145 مراجعة · دخول €20–30 شامل sunbed · 10–12 دقيقة</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9070952%2C14.4985796&amp;query_place_id=ChIJA1LwMaFFDhMR-PCctsrC8Hc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+        <h4 class="stop-title">🏖️ Manta Beach Club — Sliema</h4>
+        <p class="stop-desc">Tigné Seafront · 4.5 على 1,491 مراجعة · مسبح وخدمة sunbed وإطلالة على فاليتا · الجمعة 9:00am–11:00pm</p>
+        <p class="why">💡 Mystical Experience ليست حفلة نهارية — هي Psy-Trance على سطح Gianpula ضمن تذكرة الليلة نفسها · ⚠️ يُنصح بحجز الأسرّة مسبقًا: +356 7978 1400</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9066710%2C14.5092719&amp;query_place_id=ChIJJbWetHlFDhMRZ0P8IbiSMYo" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">4:30pm–6:00pm</div>
+      <div class="stop-time">5:00pm–5:20pm</div>
       <div class="stop-main">
-        <h4 class="stop-title">🏨 راحة ممتدة</h4>
-        <p class="stop-desc">90 دقيقة — الليلة تمتد لـ4:00am وقبلها ليلة القارب</p>
+        <h4 class="stop-title">🚕 العودة إلى السكن</h4>
+        <p class="stop-desc">~15 دقيقة من سليمة</p>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">6:00pm–6:30pm</div>
+      <div class="stop-time">5:20pm–8:30pm</div>
+      <div class="stop-main">
+        <h4 class="stop-title">🏨 راحة + دش + تجهيز</h4>
+        <p class="stop-desc">🟢 الخروج من السكن مرة واحدة فقط — لا عودة بعد 8:30pm</p>
+      </div></li><li class="stop ph-evening">
+      <div class="stop-time">8:30pm–9:00pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🚕 الانتقال إلى Mdina</h4>
-        <p class="stop-desc">~25–30 دقيقة من سان جِليان · المطعم قريب من Gianpula</p>
+        <p class="stop-desc">~25–30 دقيقة من سان جِليان</p>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">6:30pm–7:45pm</div>
+      <div class="stop-time">9:00pm–10:15pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🍽️ العشاء —</h4>
-        <p class="why">🟢 ساعة وربع بلا ضغط · المطعم مفتوح من 5:00pm فلا خطر توقيت ولا حاجة لسباق قبل الأبواب</p><div class="opts"><div class="opt opt-a">
+        <p class="why">⚠️ المطعم يغلق 11:00pm — الجلوس 9:00pm يترك ساعتين هامشًا. لو كان ممتلئًا فالبديل على بعد خطوات داخل الأسوار</p><div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
       <div class="opt-name">The Knights Kitchen — Mdina</div>
       
       <p class="opt-desc">4.8 على 2,904 مراجعة — الأكبر في قائمة مالطا · مفتوح 5:00pm–11:00pm يوميًا · تراس بإطلالة</p>
       <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8871315%2C14.4021948&amp;query_place_id=ChIJAdlzq2tRDhMRiuGXOjPdx-8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">Chukkas — Mosta</div>
+      <div class="opt-name">Coogi&#x27;s Pizzeria &amp; Bistrot</div>
       
-      <p class="opt-desc">ستيك هاوس 4.6 على 1,073 · ⚠️ يفتح 7:00pm — لا يصلح لموعد 6:30pm إلا بتأخير العشاء · حجز عبر bookia.mt</p>
-      <div class="lnks"><a class="lnk" href="https://bookia.mt/restaurants-malta/chukkas-mosta" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Bookia</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9019848%2C14.4198029&amp;query_place_id=ChIJwwPvxwhRDhMRcphZtJwk4HQ" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">داخل أسوار مدينة، خطوات من Knights Kitchen · 4.8 على 7,220 مراجعة · حتى 11:00pm · بيتزا وبِسترو = خدمة أسرع · Walk-in</p>
+      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8867995%2C14.4030031&amp;query_place_id=ChIJMd5YddpRDhMRIKH23cwev7A" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">7:45pm–8:00pm</div>
+      <div class="stop-time">10:15pm–10:45pm</div>
+      <div class="stop-main">
+        <h4 class="stop-title">🚶 تمشية مدينة الليلية</h4>
+        <p class="stop-desc">30 دقيقة · أزقة "المدينة الصامتة" بالفوانيس — للجو والصور، لا جولة تاريخية · تبدأ من باب المطعم</p>
+      </div></li><li class="stop ph-night">
+      <div class="stop-time">10:45pm–11:00pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🚕 الانتقال إلى Gianpula</h4>
         <p class="stop-desc">~15 دقيقة من Mdina</p>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">8:00pm–4:00am</div>
+      <div class="stop-time">11:00pm–4:00am</div>
       <div class="stop-main">
         <h4 class="stop-title">🔥 Liberation London + Mystical Experience</h4>
-        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — ضمن تذكرة Captured 4-Day.</p><p class="stop-desc">الأبواب 8:00pm · Liberation على مسرح Phoenix، وMystical Experience (Psy-Trance) على The Rooftop — الاثنان بنفس التذكرة</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
+        <p class="stop-booked-badge stop-badge-booked">✅ محجوز — ضمن تذكرة Captured 4-Day.</p><p class="stop-desc">الأبواب 8:00pm · دخول متعمّد 11:00pm — قبل Mirage Live مباشرة، وتلحق الذروة كاملة</p>
+        <p class="stop-desc">🎧 Phoenix: Mirage Live 11:15 · John O&#x27;Callaghan 12:15 · Factor B 1:45 — Rooftop: Rod Minus 11:00 · Avalon 12:30 · Human Asteroid 2:30</p><div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         
@@ -1136,8 +1182,8 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 </article><article class="day city-mt" id="d5" data-city="mt" data-date="2026-09-05">
   <header class="day-head">
     <div class="day-date"><span class="dd">05.09</span><span class="dw">السبت</span></div>
-    <h3 class="day-title">Recovery + Gatecrasher</h3>
-    <p class="day-sub">Recovery فعلي بعد 4 سبتمبر → Spa/Massage → بحر خفيف → Gatecrasher Day 2</p>
+    <h3 class="day-title">Recovery + Bora Bora + Gatecrasher</h3>
+    <p class="day-sub">Spa → Bora Bora Ibiza Malta Pool Party → Hotel Reset → عشاء Buffalo Bill's → Gatecrasher (دخول متأخر)</p>
     <div class="day-tags">
       <span class="tag tag-city">مالطا</span>
       <span class="tag tag-mode">ريكفري + سهر</span>
@@ -1165,79 +1211,59 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="opt-desc">خيار أخف وأسرع للقهوة قبل الـSpa</p>
       <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8961000%2C14.5116000&amp;query_place_id=ChIJw26enitFDhMRt8k_uH4Sf3w" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">1:00pm–2:30pm</div>
+      <div class="stop-time">1:00pm–3:00/3:30pm</div>
       <div class="stop-main">
         <h4 class="stop-title">💆‍♂️ Recovery — IKONIKA Spa (HOLM Boutique Spa) ⭐</h4>
-        <p class="stop-booked-badge stop-badge-booked">✅ محجوز ومؤكد</p><p class="stop-desc">Anti-Stress Massage 55 دقيقة (1:00pm-1:55pm)، معالجة أنثى، €69. HOLM Boutique &amp; SPA, Fabri Lane, St. Julian&#x27;s · +356 22484820. يفتح يوميًا 8:00am–8:00pm؛ الوقت المتبقي (1:55pm-2:30pm) راحة إضافية قبل الخروج</p><div class="lnks"><a class="lnk" href="https://www.ikcollection.com/our-collection/holm-boutique-spa/ikonika-spa-st-julians" target="_blank" rel="noopener"><span class="lnk-i">↗</span>IKONIKA Spa</a></div>
+        <p class="stop-booked-badge stop-badge-booked">✅ محجوز ومؤكد</p><p class="stop-desc">Anti-Stress Massage 55 دقيقة (1:00pm-1:55pm)، معالجة أنثى، €69. HOLM Boutique &amp; SPA, Fabri Lane, St. Julian&#x27;s · +356 22484820. بعد المساج راحة بسيطة، والخروج المتوقع حوالي 3:00pm–3:30pm</p><div class="lnks"><a class="lnk" href="https://www.ikcollection.com/our-collection/holm-boutique-spa/ikonika-spa-st-julians" target="_blank" rel="noopener"><span class="lnk-i">↗</span>IKONIKA Spa</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">3:15pm–5:30pm</div>
+      <div class="stop-time">~3:30pm–7:00pm</div>
       <div class="stop-main">
-        <h4 class="stop-title">🌊 بحر / Relax —</h4>
-        <p class="why">➕ اختياري: Pre-Party مجانية على سطح مسبح SoCity في Paceville 5:00–7:30pm (مشي من السكن) — Relos · Heart &amp; Hawk · Swifty &amp; Sherrie Metcalfe، وباص للـGianpula 7:30pm. تستبدل هذا البند لو رغبت</p>
-        <div class="opts"><div class="opt opt-a">
-      <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">Cabana Club — ME Malta</div>
-      
-      <p class="opt-desc">Gort Street، سان جِليان — مشي من السكن · 4.8 على 150 مراجعة · حتى 7:00pm · مسبح وكابانات، هادئ بلا حفلات</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9224698%2C14.4891176&amp;query_place_id=ChIJQ_cC8FRFDhMR52StvYoR2Rc" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
-      <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">The Reef Club — Westin</div>
-      
-      <p class="opt-desc">4.4 على 97 · مشي أيضًا · ⚠️ شكوى موثقة: دخول €45 لا يشمل المسبح لغير النزلاء — اسأل قبل الدفع</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9252289%2C14.4935232&amp;query_place_id=ChIJ5eEtdK5FDhMRY_rV_WO7JWI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+        <h4 class="stop-title">🏊 Pool Party — Bora Bora Ibiza Malta ⭐</h4>
+        <p class="stop-desc">St. Paul&#x27;s Bay · ~20-25 دقيقة من St. Julian&#x27;s · Beach/Pool Party المعتمد لليوم (بدل Cabana Club) — سباحة + شمس + أجواء أعلى طاقة. نجلس إلى حوالي 6:30pm–7:00pm حسب الطاقة. ⚠️ السنبد غير مضمون؛ المكان يعتمد على التوفر (First Come First Served) ما لم يُحجز فعليًا</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9478780%2C14.4102005&amp;query_place_id=ChIJi5_mou5PDhMRKxxKbuUFIR8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">5:30pm–6:15pm</div>
+      <div class="stop-time">~7:00pm–7:30pm</div>
+      <div class="stop-main">
+        <h4 class="stop-title">🚕 العودة إلى السكن</h4>
+        <p class="stop-desc">St. Paul&#x27;s Bay → St. Julian&#x27;s، ~20-25 دقيقة</p>
+      </div></li><li class="stop ph-evening">
+      <div class="stop-time">~7:30pm–9:15pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🏨 Hotel Reset</h4>
-        <p class="stop-desc">دش + تجهيز + راحة قصيرة</p>
+        <p class="stop-desc">دش + تغيير كامل + راحة حقيقية — بلوك راحة واحد متواصل، بدون ضغط العشاء مباشرة بعد Bora Bora</p>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">6:15pm–6:45pm</div>
+      <div class="stop-time">~9:15pm–10:30/10:45pm</div>
       <div class="stop-main">
-        <h4 class="stop-title">🚕 الانتقال إلى Rabat</h4>
-        <p class="stop-desc">~25–30 دقيقة من St. Julian&#x27;s</p>
+        <h4 class="stop-title">🍽️ عشاء — Buffalo Bill&#x27;s ⭐</h4>
+        <p class="stop-desc">Steakhouse، Portomaso Marina، St. Julian&#x27;s — مشي من الفندق. اختير لأنه ستيك هاوس مناسب لرغبتنا بعشاء فيه لحم؛ عشاء جيد ومرتاح لا مجرد وجبة سريعة قبل الحفلة. يفتح السبت 6:00pm–12:00am</p><div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9210451%2C14.4922603&amp;query_place_id=ChIJJ47cWWpFDhMRoAUtpIyrwBk" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">6:45pm–7:35pm</div>
-      <div class="stop-main">
-        <h4 class="stop-title">🍽️ عشاء مبكر</h4>
-        <div class="opts"><div class="opt opt-a">
-      <div class="opt-top"><span class="opt-rank">أول</span></div>
-      <div class="opt-name">Root 81</div>
-      
-      <p class="opt-desc">Mediterranean/European option near Gianpula; strong food experience without making the pre-party meal heavy</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8831673%2C14.4038929&amp;query_place_id=ChIJCSbmP75RDhMRGYYXs2oObQw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div><div class="opt opt-b">
-      <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">The Fork And Cork</div>
-      
-      <p class="opt-desc">Mediterranean/European backup near Gianpula; more polished if you want a fuller dinner</p>
-      <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8831947%2C14.4040036&amp;query_place_id=ChIJ7YVfFb5RDhMR6kKV2k0zz8A" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
-      </div></li><li class="stop ph-evening">
-      <div class="stop-time">7:35pm–7:50pm</div>
+      <div class="stop-time">~10:45pm–11:15pm</div>
       <div class="stop-main">
         <h4 class="stop-title">🚕 الانتقال إلى Gianpula</h4>
-        <p class="stop-desc">المطعمان في مدينة (Saqqajja) — قريبان من الڤينيو (~10 دقائق)</p>
+        <p class="stop-desc">St. Julian&#x27;s → Rabat، ~25-30 دقيقة</p>
       </div></li><li class="stop ph-evening">
-      <div class="stop-time">8:00pm–4:00am</div>
+      <div class="stop-time">~11:00pm–4:00am</div>
       <div class="stop-main">
         <h4 class="stop-title">🔥 السهر —</h4>
         <div class="opts"><div class="opt opt-a">
       <div class="opt-top"><span class="opt-rank">أول</span></div>
       <div class="opt-name">Captured / Gatecrasher Malta ⭐</div>
       <span class="opt-booked-badge opt-badge-booked">✅ محجوز — ضمن تذكرة Captured 4-Day.</span>
-      <p class="opt-desc">Gianpula Day 2 · Gatecrasher Main Room + Wax Format in Groove Garden · صفحة التذاكر تقول 7:00pm وموقع Gianpula يقول 8:00pm — ندخل 8:00pm</p>
+      <p class="opt-desc">Gianpula Day 2 · Gatecrasher Main Room + Wax Format in Groove Garden · الحفلة تمتد للفجر، لذلك ندخل متأخرين حوالي 11:00pm–11:30pm بدل الوصول المبكر، ونكمل حتى 4:00am إذا كانت الأجواء ممتازة</p>
       <div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/tickets/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Gianpula</a></div></div><div class="opt opt-b">
       <div class="opt-top"><span class="opt-rank">بديل</span></div>
-      <div class="opt-name">Wild West @ Toy Room</div>
+      <div class="opt-name">UNO Malta</div>
       
-      <p class="opt-desc">Backup تجاري/اجتماعي إذا قررنا لاحقًا عدم تكرار Captured</p>
-      <div class="lnks"><a class="lnk" href="https://www.toyroomclubmalta.com/events" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Toy Room</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9242198%2C14.4890574&amp;query_place_id=ChIJZ_9G9W9FDhMRO7f2C1ePmcw" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
+      <p class="opt-desc">Ta&#x27;Qali — Backup الليلة لو دخلنا Gatecrasher وما أعجبتنا الأجواء، نطلع ونتوجه له. قريب جدًا من Gianpula (~5-10 دقائق)، يفتح السبت حتى 4:00am — التفاصيل التشغيلية (السعر، الفعالية بالضبط) تحتاج تأكيد قبل الاعتماد الكامل</p>
+      <div class="lnks"><a class="lnk" href="https://unomalta.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>UNO Malta</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8913746%2C14.4192547&amp;query_place_id=ChIJdbmlpc5RDhMR3EwuAnoN_v8" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         
       </div></li></ol>
-  <div class="day-foot"><p class="daynote">💆 يوم Recovery بعد ليلة ثقيلة؛ الدخول من بداية Gatecrasher الساعة 19:00 بدل انتظار حتى 21:00</p><p class="daynote">🟡 حالة اليوم: الهيكل مقفل مبدئيًا. Gatecrasher هو الخيار الأول؛ جميع الحفلات تبقى ضمن Final Party Audit</p></div>
-</article><article class="day city-mt" id="d6" data-city="mt" data-date="2026-09-06">
+  <div class="day-foot"><p class="daynote">💆 يوم Recovery نهاري (مساج + Bora Bora)، براحة واحدة متواصلة بالفندق قبل طلعة عشاء وسهر واحدة متصلة بدون رجعة بينهما</p><p class="daynote">🟡 حالة اليوم: تعديل معتمد نهائي 5 سبتمبر. Gatecrasher هو الخيار الأول بدخول متأخر بعد 11pm؛ UNO Malta باكب فقط إذا احتجنا التبديل منتصف الليلة</p></div>
+</article>
+<article class="day city-mt" id="d6" data-city="mt" data-date="2026-09-06">
   <header class="day-head">
     <div class="day-date"><span class="dd">06.09</span><span class="dw">الأحد</span></div>
     <h3 class="day-title">Valletta + Judgement Sundays + MOVE IT</h3>
@@ -1332,7 +1358,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <h4 class="stop-title">🎧 MOVE IT! — Gianpula</h4>
         <p class="stop-booked-badge stop-badge-booked">✅ محجوز — طلب WTPODE، €25.</p><p class="stop-desc">تأكيد رسمي: رسوم دخول إضافية €10 بعد 1:00am بالضبط (مو تقدير). Latin / Reggaeton / Dembow / Afrotrap · Open-air. استمرار مباشر لنفس ليلة Captured — الاثنان محجوزان ومتتاليان، مو بديلين لبعض</p><div class="lnks"><a class="lnk" href="https://gianpulavillage.com/upcoming_events/move-it-19/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Gianpula</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.8760449%2C14.4183190&amp;query_place_id=ChIJnRnIhGhRDhMR6FHNhJ8hepA" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         
@@ -1432,7 +1458,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="opt-desc">⚖️ CamelPhat مدفوع ومحجوز (€20) في St Paul&#x27;s Bay، تاكسي ذهابًا وإيابًا، وينتهي 1:00am · RAVENATION مجاني ومشي لكن التفاصيل غير معلنة. لا تبدّل إلا لو أُعلن line-up يستحق</p>
       <div class="lnks"><a class="lnk" href="https://www.capturedfestival.com/" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Captured</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9238610%2C14.4891642&amp;query_place_id=ChIJtyMNTmlFDhMR-L7p6KT7RhI" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         
@@ -1599,7 +1625,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
         <p class="why">💡 تقييم النادي 2.5 على 73 مراجعة — التذكرة مدفوعة، لكن الانسحاب المبكر خيار مفتوح لو لم تعجبك الأجواء. السكن قريب</p>
         <p class="stop-booked-badge stop-badge-booked">✅ محجوز — General Admission Phrase 2.</p><p class="stop-desc">🕐 الأبواب رسميًا 10:00pm، لكن التذكرة تقول &quot;Check in time: Anytime&quot; — ندخل 10:45pm (وقت وصولنا الفعلي بعد التجهيز)، بدون أي مشكلة. ⚠️ الموقع الصحيح Shadow Club (مو Passion Night Club كما كان مذكورًا). Dancehall حصريًا (80% Dancehall + 20% متنوع)، DJs ومقدمين من كل أوروبا. Shadow Club, San Ġiljan. أول Pre-Party لـFreedom Street</p><div class="lnks"><a class="lnk" href="https://www.eventbrite.co.uk/e/vybz-inna-malta-gully-vs-gaza-pre-party-tickets-1984899904045" target="_blank" rel="noopener"><span class="lnk-i">🎟️</span>Eventbrite</a><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=35.9240486%2C14.4889224&amp;query_place_id=ChIJXwMqurpFDhMRY94rigEQM1g" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق</h4>
         
@@ -1707,7 +1733,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       <p class="opt-desc">10:00pm–3:30am · St George&#x27;s Road — شارع سكنك · ⚠️ المكان غير موجود في خرائط جوجل باسمه؛ العنوان من إعلان الفعالية فقط. تحقق منه على الأرض قبل الاعتماد عليه</p>
       <div class="lnks"><a class="lnk" href="https://www.google.com/maps/search/?api=1&amp;query=Tipsy+Cat+St+Georges+Road+San+Giljan+Malta" target="_blank" rel="noopener"><span class="lnk-i">📍</span>Maps</a></div></div></div>
       </div></li><li class="stop ph-day">
-      <div class="stop-time">حسب الطاقة</div>
+      <div class="stop-time stop-time-ar">حسب الطاقة</div>
       <div class="stop-main">
         <h4 class="stop-title">🏠 العودة للفندق ⚠️</h4>
         <p class="stop-desc">⚠️ بكرة صحوة+فطور+تجهيز 9:00am، وانتقال للمطار 10:00am (رحلة ميلانو 12:55pm)</p>
@@ -2823,7 +2849,6 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 </main>
 
 <footer>Travel OS · النسخة الثانية · 27 أغسطس — 12 سبتمبر 2026<br>حالة التخطيط: مقفلة ✓ · حالة التنفيذ: بدأت — راجع قائمة الحجز</footer>
-<button class="top" id="top" aria-label="أعلى الصفحة">↑</button>
 
 <script>
 (function(){
@@ -2955,10 +2980,6 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
       apply();});
   });
 
-  var top=document.getElementById('top');
-  window.addEventListener('scroll',function(){top.classList.toggle('on',window.scrollY>700);},{passive:true});
-  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-
   /* booking queue: interactive checkboxes + live dashboard */
   var bkChecks=[].slice.call(document.querySelectorAll('.bk-check input'));
   if(bkChecks.length){
@@ -3033,6 +3054,125 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
   try{ requestAnimationFrame(function(){ requestAnimationFrame(function(){ jumpToToday(false); }); }); }catch(e){}
   var tBtn=document.getElementById('todayBtn');
   if(tBtn){ tBtn.addEventListener('click',function(){ var t=document.querySelector('.nav button[data-p="plan"]'); if(t) t.click(); jumpToToday(true); }); }
+  var topBtn=document.getElementById('top');
+  if(topBtn){
+    window.addEventListener('scroll',function(){topBtn.classList.toggle('on',window.scrollY>700);},{passive:true});
+    topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  }
+
+  /* ---- trip progress bar ---- */
+  (function tripProgressInit(){
+    var el=document.getElementById('tripProgress');
+    if(!el) return;
+    var dayEls=[].slice.call(document.querySelectorAll('.day[data-date]'));
+    if(!dayEls.length) return;
+    var dates=dayEls.map(function(d){return d.dataset.date;}).sort();
+    var startIso=dates[0], endIso=dates[dates.length-1];
+    var totalDays=dayEls.length;
+    function toDate(iso){ var p=iso.split('-'); return new Date(+p[0],+p[1]-1,+p[2]); }
+    function fmt(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+    function render(){
+      var now=new Date();
+      var todayIso=fmt(now);
+      var start=toDate(startIso), end=toDate(endIso), today=toDate(todayIso);
+      var msDay=86400000;
+      var dayNum=Math.round((today-start)/msDay)+1;
+      var label, pct;
+      if(todayIso<startIso){
+        var untilDays=Math.round((start-today)/msDay);
+        label='الرحلة تبدأ بعد '+untilDays+(untilDays===1?' يوم':' أيام');
+        pct=0;
+      } else if(todayIso>endIso){
+        label='انتهت الرحلة 🎉';
+        pct=100;
+      } else {
+        label='أنت في اليوم '+dayNum+' من '+totalDays;
+        pct=Math.round((dayNum/totalDays)*100);
+      }
+      document.getElementById('tpLabel').textContent=label;
+      document.getElementById('tpPct').textContent=pct+'%';
+      document.getElementById('tpFill').style.width=pct+'%';
+      el.hidden=false;
+    }
+    render();
+    setInterval(render, 60*1000);
+  })();
+
+  /* ---- live "now" indicator inside today's timeline ---- */
+  (function nowIndicatorInit(){
+    function parseMinutes(str, inheritAmPm){
+      var m=str.match(/(\d{1,2}):(\d{2})\s*(am|pm)?/i);
+      if(!m) return null;
+      var h=parseInt(m[1],10), mi=parseInt(m[2],10);
+      var ap=(m[3]||inheritAmPm||'').toLowerCase();
+      if(ap==='pm' && h!==12) h+=12;
+      if(ap==='am' && h===12) h=0;
+      if(!ap) return null;
+      return h*60+mi;
+    }
+    function parseRange(text){
+      if(!text) return null;
+      var clean=text.replace(/^~/,'').trim();
+      var parts=clean.split(/[–—]/);
+      if(parts.length<2) return null;
+      var startPart=parts[0].trim(), endPart=parts.slice(1).join('–').trim();
+      var endApMatch=endPart.match(/(am|pm)/i);
+      var endAp=endApMatch?endApMatch[0].toLowerCase():null;
+      if(endPart.indexOf('/')!==-1){
+        var segs=endPart.split('/');
+        endPart=segs[segs.length-1].trim();
+        if(!/am|pm/i.test(endPart) && endAp) endPart+=endAp;
+      }
+      var startApMatch=startPart.match(/(am|pm)/i);
+      var startMin=parseMinutes(startPart, null);
+      var endMin=parseMinutes(endPart, null);
+      if(startMin==null && endApMatch) startMin=parseMinutes(startPart, endApMatch[0]);
+      if(startMin==null || endMin==null) return null;
+      if(endMin<=startMin) endMin+=24*60;
+      return {start:startMin, end:endMin};
+    }
+    function fmt(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+    function isoOffset(iso, delta){
+      var p=iso.split('-'); var d=new Date(+p[0],+p[1]-1,+p[2]);
+      d.setDate(d.getDate()+delta);
+      return fmt(d);
+    }
+    function tryDay(iso, nowMin){
+      var day=document.querySelector('.day[data-date="'+iso+'"]');
+      if(!day) return false;
+      var found=false;
+      [].slice.call(day.querySelectorAll('li.stop')).forEach(function(stop){
+        var timeEl=stop.querySelector('.stop-time');
+        if(!timeEl) return;
+        var range=parseRange(timeEl.textContent);
+        if(!range) return;
+        if(nowMin>=range.start && nowMin<range.end){
+          stop.classList.add('is-now');
+          var titleEl=stop.querySelector('.stop-title, .stop-main > h4');
+          if(titleEl && !titleEl.querySelector('.now-badge')){
+            var b=document.createElement('span');
+            b.className='now-badge'; b.innerHTML='<i class="now-dot"></i>الآن';
+            titleEl.appendChild(b);
+          }
+          found=true;
+        }
+      });
+      return found;
+    }
+    function update(){
+      document.querySelectorAll('.stop.is-now').forEach(function(s){s.classList.remove('is-now');});
+      document.querySelectorAll('.now-badge').forEach(function(b){b.remove();});
+      var now=new Date();
+      var todayIso=fmt(now);
+      var nowMin=now.getHours()*60+now.getMinutes();
+      var found=tryDay(todayIso, nowMin);
+      if(!found && nowMin<6*60){
+        tryDay(isoOffset(todayIso,-1), nowMin+24*60);
+      }
+    }
+    update();
+    setInterval(update, 60*1000);
+  })();
   } /* end init */
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(init);
@@ -3042,5 +3182,6 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 })();
 </script>
 <button id="todayBtn" type="button">📍 اليوم</button>
+<button class="top" id="top" type="button" aria-label="أعلى الصفحة">↑</button>
 </body>
 </html>
